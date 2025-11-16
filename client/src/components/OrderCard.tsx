@@ -42,7 +42,11 @@ export default function OrderCard({
   onViewDetails,
 }: OrderCardProps) {
   const { formatPrice } = useLanguage();
-  const statusInfo = statusConfig[status];
+  // Guard against unexpected status values to prevent runtime crashes
+  const statusInfo = statusConfig[status] || {
+    label: status ? status.charAt(0).toUpperCase() + status.slice(1) : "Unknown",
+    className: "bg-muted text-muted-foreground",
+  };
   const deliveryInfo = deliveryConfig[deliveryMethod];
   const DeliveryIcon = deliveryInfo.icon;
 

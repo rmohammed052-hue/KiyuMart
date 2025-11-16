@@ -44,7 +44,7 @@ export default function Orders() {
       case "shipped":
         return "bg-purple-500 text-white";
       case "delivered":
-        return "bg-green-500 text-white";
+        return "bg-primary text-primary-foreground";
       case "cancelled":
         return "bg-red-500 text-white";
       default:

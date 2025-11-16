@@ -423,7 +423,7 @@ export default function AdminMessages() {
     switch(role.toLowerCase()) {
       case "admin": return "bg-purple-500 text-white";
       case "seller": return "bg-blue-500 text-white";
-      case "buyer": return "bg-green-500 text-white";
+      case "buyer": return "bg-primary text-white";
       case "rider": return "bg-orange-500 text-white";
       case "agent": return "bg-pink-500 text-white";
       default: return "bg-gray-500 text-white";

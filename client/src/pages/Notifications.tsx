@@ -165,7 +165,7 @@ export default function Notifications() {
       case "review":
         return "text-orange-500";
       case "message":
-        return "text-green-500";
+        return "text-primary";
       default:
         return "text-muted-foreground";
     }

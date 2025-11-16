@@ -81,7 +81,7 @@ export default function RiderEarnings() {
                           <p className="font-medium">Delivery #{item.deliveryId}</p>
                           <p className="text-sm text-muted-foreground">{new Date(item.date).toLocaleDateString()}</p>
                         </div>
-                        <p className="font-semibold text-green-600">{formatPrice(Number(item.amount) || 0)}</p>
+                        <p className="font-semibold text-primary">{formatPrice(Number(item.amount) || 0)}</p>
                       </div>
                     ))
                   ) : (

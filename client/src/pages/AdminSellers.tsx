@@ -693,7 +693,7 @@ function ApproveRejectDialog({ sellerData }: { sellerData: SellerData }) {
             size="sm"
             onClick={() => handleAction('approve')}
             data-testid={`button-approve-${sellerData.id}`}
-            className="bg-green-600 hover:bg-green-700"
+            className="bg-primary hover:brightness-110 text-primary-foreground"
           >
             <CheckCircle className="h-3 w-3 mr-1" />
             Approve
@@ -982,7 +982,7 @@ export default function AdminSellers() {
 
                       <div className="flex items-center gap-2 mt-3">
                         {seller.isActive ? (
-                          <Badge className="bg-green-500" data-testid={`badge-status-${seller.id}`}>
+                          <Badge className="bg-primary text-primary-foreground" data-testid={`badge-status-${seller.id}`}>
                             <CheckCircle className="h-3 w-3 mr-1" />
                             Active
                           </Badge>

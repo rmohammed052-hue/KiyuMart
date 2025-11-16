@@ -4,7 +4,9 @@ import { useLocation } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { DB_DEFAULTS } from "@shared/theme-constants";
 import DashboardLayout from "@/components/DashboardLayout";
+import { applyBranding } from "@/hooks/useBranding";
 import { useAuth } from "@/lib/auth";
 import { queryClient, apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -54,17 +56,17 @@ export default function AdminBranding() {
 
   const form = useForm<BrandingFormData>({
     resolver: zodResolver(brandingSchema),
-    values: settings ? {
-      primaryColor: settings.primaryColor || "#1e7b5f",
-      secondaryColor: settings.secondaryColor || "#2c3e50",
-      accentColor: settings.accentColor || "#e74c3c",
-      lightBgColor: settings.lightBgColor || "#ffffff",
-      lightTextColor: settings.lightTextColor || "#000000",
-      lightCardColor: settings.lightCardColor || "#f8f9fa",
-      darkBgColor: settings.darkBgColor || "#1a1a1a",
-      darkTextColor: settings.darkTextColor || "#ffffff",
-      darkCardColor: settings.darkCardColor || "#2a2a2a",
-    } : undefined,
+    defaultValues: {
+      primaryColor: DB_DEFAULTS.primaryColor,
+      secondaryColor: DB_DEFAULTS.secondaryColor,
+      accentColor: DB_DEFAULTS.accentColor,
+      lightBgColor: DB_DEFAULTS.lightBgColor,
+      lightTextColor: DB_DEFAULTS.lightTextColor,
+      lightCardColor: DB_DEFAULTS.lightCardColor,
+      darkBgColor: DB_DEFAULTS.darkBgColor,
+      darkTextColor: DB_DEFAULTS.darkTextColor,
+      darkCardColor: DB_DEFAULTS.darkCardColor,
+    }
   });
 
   const updateMutation = useMutation({
@@ -72,17 +74,21 @@ export default function AdminBranding() {
       return await apiRequest("PATCH", "/api/settings", data);
     },
     onSuccess: () => {
-      // Invalidate with exact pattern to match the query key
       queryClient.invalidateQueries({ queryKey: ["/api/settings", user?.id] });
       queryClient.invalidateQueries({ queryKey: ["/api/platform-settings"] });
-      // Also invalidate without user?.id for backwards compatibility
       queryClient.invalidateQueries({ queryKey: ["/api/settings"] });
       toast({
         title: "Success",
         description: "Branding colors updated successfully",
       });
-      // Force immediate refetch of platform settings for useBranding hook
       queryClient.refetchQueries({ queryKey: ["/api/platform-settings"] });
+      const submitted = form.getValues();
+      applyBranding(submitted as any);
+      queryClient.setQueryData(["/api/platform-settings"], (old: any) => ({
+        ...(old || {}),
+        ...submitted,
+        updatedAt: new Date().toISOString(),
+      }));
     },
     onError: (error: any) => {
       toast({
@@ -93,21 +99,46 @@ export default function AdminBranding() {
     },
   });
 
+  // Apply server settings once when fetched or after successful mutation; avoid overwriting unsaved edits
+  useEffect(() => {
+    if (settings && !form.formState.isDirty && !updateMutation.isPending) {
+      form.reset({
+        primaryColor: settings.primaryColor || DB_DEFAULTS.primaryColor,
+        secondaryColor: settings.secondaryColor || DB_DEFAULTS.secondaryColor,
+        accentColor: settings.accentColor || DB_DEFAULTS.accentColor,
+        lightBgColor: settings.lightBgColor || DB_DEFAULTS.lightBgColor,
+        lightTextColor: settings.lightTextColor || DB_DEFAULTS.lightTextColor,
+        lightCardColor: settings.lightCardColor || DB_DEFAULTS.lightCardColor,
+        darkBgColor: settings.darkBgColor || DB_DEFAULTS.darkBgColor,
+        darkTextColor: settings.darkTextColor || DB_DEFAULTS.darkTextColor,
+        darkCardColor: settings.darkCardColor || DB_DEFAULTS.darkCardColor,
+      });
+    }
+  }, [settings, form, updateMutation.isPending]);
+
+  // Live preview branding as user edits (optimistic UI)
+  useEffect(() => {
+    const subscription = form.watch((values) => {
+      applyBranding(values as any);
+    });
+    return () => subscription.unsubscribe();
+  }, [form]);
+
   const onSubmit = (data: BrandingFormData) => {
     updateMutation.mutate(data);
   };
 
   const resetToDefaults = () => {
     form.reset({
-      primaryColor: "#1e7b5f",
-      secondaryColor: "#2c3e50",
-      accentColor: "#e74c3c",
-      lightBgColor: "#ffffff",
-      lightTextColor: "#000000",
-      lightCardColor: "#f8f9fa",
-      darkBgColor: "#1a1a1a",
-      darkTextColor: "#ffffff",
-      darkCardColor: "#2a2a2a",
+      primaryColor: DB_DEFAULTS.primaryColor,
+      secondaryColor: DB_DEFAULTS.secondaryColor,
+      accentColor: DB_DEFAULTS.accentColor,
+      lightBgColor: DB_DEFAULTS.lightBgColor,
+      lightTextColor: DB_DEFAULTS.lightTextColor,
+      lightCardColor: DB_DEFAULTS.lightCardColor,
+      darkBgColor: DB_DEFAULTS.darkBgColor,
+      darkTextColor: DB_DEFAULTS.darkTextColor,
+      darkCardColor: DB_DEFAULTS.darkCardColor,
     });
   };
 
@@ -180,7 +211,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("primaryColor")}
-                            placeholder="#1e7b5f"
+                            placeholder={DB_DEFAULTS.primaryColor}
                             className="flex-1"
                             data-testid="input-primary-color-text"
                           />
@@ -204,7 +235,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("secondaryColor")}
-                            placeholder="#2c3e50"
+                            placeholder={DB_DEFAULTS.secondaryColor}
                             className="flex-1"
                             data-testid="input-secondary-color-text"
                           />
@@ -228,7 +259,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("accentColor")}
-                            placeholder="#e74c3c"
+                            placeholder={DB_DEFAULTS.accentColor}
                             className="flex-1"
                             data-testid="input-accent-color-text"
                           />
@@ -238,6 +269,7 @@ export default function AdminBranding() {
                         )}
                         <p className="text-xs text-muted-foreground">Accent color for notifications and badges</p>
                       </div>
+
                     </div>
                   </CardContent>
                 </Card>
@@ -266,7 +298,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("lightBgColor")}
-                            placeholder="#ffffff"
+                            placeholder={DB_DEFAULTS.lightBgColor}
                             className="flex-1"
                             data-testid="input-light-bg-color-text"
                           />
@@ -290,7 +322,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("lightTextColor")}
-                            placeholder="#000000"
+                            placeholder={DB_DEFAULTS.lightTextColor}
                             className="flex-1"
                             data-testid="input-light-text-color-text"
                           />
@@ -314,7 +346,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("lightCardColor")}
-                            placeholder="#f8f9fa"
+                            placeholder={DB_DEFAULTS.lightCardColor}
                             className="flex-1"
                             data-testid="input-light-card-color-text"
                           />
@@ -352,7 +384,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("darkBgColor")}
-                            placeholder="#1a1a1a"
+                            placeholder={DB_DEFAULTS.darkBgColor}
                             className="flex-1"
                             data-testid="input-dark-bg-color-text"
                           />
@@ -376,7 +408,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("darkTextColor")}
-                            placeholder="#ffffff"
+                            placeholder={DB_DEFAULTS.darkTextColor}
                             className="flex-1"
                             data-testid="input-dark-text-color-text"
                           />
@@ -400,7 +432,7 @@ export default function AdminBranding() {
                           <Input
                             type="text"
                             {...form.register("darkCardColor")}
-                            placeholder="#2a2a2a"
+                            placeholder={DB_DEFAULTS.darkCardColor}
                             className="flex-1"
                             data-testid="input-dark-card-color-text"
                           />

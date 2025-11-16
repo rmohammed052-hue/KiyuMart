@@ -97,7 +97,7 @@ export default function RiderDetailsPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "delivered":
-        return "bg-green-500";
+        return "bg-primary text-primary-foreground";
       case "delivering":
         return "bg-blue-500";
       case "processing":
@@ -291,13 +291,13 @@ export default function RiderDetailsPage() {
                   <CardContent className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Total Earnings</span>
-                      <span className="font-bold text-lg text-green-600">
+                      <span className="font-bold text-lg text-primary">
                         {formatPrice(earnings.totalEarnings)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Earnings This Month</span>
-                      <span className="font-bold text-lg text-green-600">
+                      <span className="font-bold text-lg text-primary">
                         {formatPrice(earnings.earningsThisMonth)}
                       </span>
                     </div>

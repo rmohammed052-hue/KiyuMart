@@ -428,12 +428,12 @@ export default function CheckoutConnected() {
                     </Button>
                   </div>
                 ) : (
-                  <div className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-950 rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="flex items-center justify-between p-3 bg-primary/10 dark:bg-primary/15 rounded-lg border border-primary/40 dark:border-primary/50">
                     <div className="flex items-center gap-3">
-                      <Badge variant="secondary" className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100" data-testid="badge-coupon-applied">
+                      <Badge variant="secondary" className="bg-primary/15 text-primary" data-testid="badge-coupon-applied">
                         {appliedCoupon.code}
                       </Badge>
-                      <span className="text-sm font-medium text-green-700 dark:text-green-300" data-testid="text-coupon-discount">
+                      <span className="text-sm font-medium text-primary" data-testid="text-coupon-discount">
                         {appliedCoupon.discountType === "percentage" 
                           ? `${appliedCoupon.discountValue}% off`
                           : `${formatPrice(parseFloat(appliedCoupon.discountValue))} off`}
@@ -473,7 +473,7 @@ export default function CheckoutConnected() {
                           <div className="text-sm font-medium line-clamp-2">{item.product!.name}</div>
                           <div className="text-sm text-muted-foreground">Qty: {item.quantity}</div>
                           {hasDiscount && (
-                            <Badge variant="secondary" className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100" data-testid={`badge-discount-${item.id}`}>
+                            <Badge variant="secondary" className="bg-primary/15 text-primary" data-testid={`badge-discount-${item.id}`}>
                               {discount}% OFF
                             </Badge>
                           )}
@@ -484,7 +484,7 @@ export default function CheckoutConnected() {
                               {formatPrice(originalPrice * item.quantity)}
                             </div>
                           )}
-                          <div className={`font-medium ${hasDiscount ? 'text-green-600 dark:text-green-400' : ''}`} data-testid={`text-item-total-${item.id}`}>
+                          <div className={`font-medium ${hasDiscount ? 'text-primary' : ''}`} data-testid={`text-item-total-${item.id}`}>
                             {formatPrice(discountedPrice * item.quantity)}
                           </div>
                         </div>
@@ -501,13 +501,13 @@ export default function CheckoutConnected() {
                     <span data-testid="text-checkout-subtotal">{formatPrice(subtotal)}</span>
                   </div>
                   {productSavings > 0 && (
-                    <div className="flex justify-between text-green-600 dark:text-green-400">
+                    <div className="flex justify-between text-primary">
                       <span className="font-medium">Product Discounts</span>
                       <span data-testid="text-product-discounts">-{formatPrice(productSavings)}</span>
                     </div>
                   )}
                   {couponDiscount > 0 && (
-                    <div className="flex justify-between text-green-600 dark:text-green-400">
+                    <div className="flex justify-between text-primary">
                       <span className="font-medium">Coupon Discount</span>
                       <span data-testid="text-checkout-coupon">-{formatPrice(couponDiscount)}</span>
                     </div>

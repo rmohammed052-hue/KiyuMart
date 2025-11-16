@@ -76,7 +76,7 @@ export default function AgentCustomers() {
                       <p className="text-sm font-medium text-muted-foreground">Active</p>
                       <p className="text-2xl font-bold">{activeCustomers}</p>
                     </div>
-                    <ShoppingBag className="h-8 w-8 text-green-500" />
+                    <ShoppingBag className="h-8 w-8 text-primary" />
                   </div>
                 </CardContent>
               </Card>

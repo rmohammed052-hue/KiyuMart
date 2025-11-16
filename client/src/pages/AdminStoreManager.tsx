@@ -4,6 +4,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { DB_DEFAULTS } from "@shared/theme-constants";
 import { queryClient, apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import DashboardLayout from "@/components/DashboardLayout";
@@ -83,7 +84,7 @@ export default function AdminStoreManager() {
       contactEmail: settings.contactEmail || "",
       contactPhone: settings.contactPhone || "",
       contactAddress: settings.contactAddress || "",
-      primaryColor: settings.primaryColor || "#1e7b5f",
+      primaryColor: settings.primaryColor || DB_DEFAULTS.primaryColor,
       secondaryColor: settings.secondaryColor || "#2c3e50",
       useCustomBranding: false,
       businessHoursOpen: "09:00",
@@ -304,7 +305,7 @@ export default function AdminStoreManager() {
                         <Input
                           type="text"
                           {...form.register("primaryColor")}
-                          placeholder="#1e7b5f"
+                          placeholder={DB_DEFAULTS.primaryColor}
                           className="flex-1"
                           data-testid="input-primary-color-text"
                         />

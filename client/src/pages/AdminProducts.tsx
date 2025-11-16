@@ -61,7 +61,7 @@ function ToggleProductStatusButton({ product }: { product: Product }) {
       {toggleStatusMutation.isPending ? (
         <Loader2 className="h-4 w-4 animate-spin" />
       ) : product.isActive ? (
-        <ToggleRight className="h-4 w-4 text-green-500" />
+        <ToggleRight className="h-4 w-4 text-primary" />
       ) : (
         <ToggleLeft className="h-4 w-4 text-muted-foreground" />
       )}
@@ -244,7 +244,7 @@ export default function AdminProducts() {
                           Stock: {product.stock}
                         </span>
                         {product.isActive ? (
-                          <Badge className="bg-green-500" data-testid={`badge-status-${product.id}`}>Active</Badge>
+                          <Badge className="bg-primary text-primary-foreground" data-testid={`badge-status-${product.id}`}>Active</Badge>
                         ) : (
                           <Badge variant="secondary" data-testid={`badge-status-${product.id}`}>Inactive</Badge>
                         )}

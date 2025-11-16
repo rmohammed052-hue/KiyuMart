@@ -1037,20 +1037,35 @@ export class DbStorage implements IStorage {
 
   // Platform settings
   async getPlatformSettings(): Promise<PlatformSettings> {
-    const result = await db.select().from(platformSettings).limit(1);
-    if (result.length === 0) {
+    // Fetch all rows to detect accidental duplicates; pick most recently updated
+    const all = await db.select().from(platformSettings).orderBy(desc(platformSettings.updatedAt));
+    if (all.length === 0) {
       const [settings] = await db.insert(platformSettings).values({}).returning();
+      console.warn('[PlatformSettings] Created initial settings row', settings.id);
       return settings;
     }
-    return result[0];
+    if (all.length > 1) {
+      console.warn('[PlatformSettings] WARNING: Multiple settings rows detected:', all.map(r => ({ id: r.id, primaryColor: r.primaryColor, updatedAt: r.updatedAt })));
+    }
+    return all[0];
   }
 
   async updatePlatformSettings(data: Partial<PlatformSettings>): Promise<PlatformSettings> {
     const existing = await this.getPlatformSettings();
+    console.log('[PlatformSettings] Incoming update payload:', data);
     const result = await db.update(platformSettings)
       .set({ ...data, updatedAt: new Date() })
       .where(eq(platformSettings.id, existing.id))
       .returning();
+    console.log('[PlatformSettings] Row after update:', result[0]);
+    // If duplicates exist, optionally mirror update to others to prevent visual reversion
+    const duplicateIds = (await db.select().from(platformSettings)).filter(r => r.id !== existing.id).map(r => r.id);
+    if (duplicateIds.length > 0) {
+      console.warn('[PlatformSettings] Mirroring update to duplicate rows:', duplicateIds);
+      for (const id of duplicateIds) {
+        await db.update(platformSettings).set({ ...data, updatedAt: new Date() }).where(eq(platformSettings.id, id));
+      }
+    }
     return result[0];
   }
 

@@ -69,7 +69,7 @@ export default function RiderActiveRoute() {
 
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-green-500 mt-0.5" />
+                    <MapPin className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <p className="font-medium">Current Location</p>
                       <p className="text-muted-foreground">{activeDelivery.currentLocation}</p>

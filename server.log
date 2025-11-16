@@ -1,0 +1,819 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Re-optimizing dependencies because lockfile has changed
+10:15:10 PM [express] serving on port 5000
+10:15:27 PM [express] GET /api/auth/me 401 in 2ms :: {"error":"Authentication required"}
+10:15:27 PM [express] GET /api/categories 200 in 60ms :: [{"id":"37163118-0cc6-49a6-b57b-23efcd89b86a…
+10:15:27 PM [express] GET /api/platform-settings 200 in 83ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:15:27 PM [express] GET /api/products 200 in 84ms :: [{"id":"62603aa2-640c-45d8-87b1-293dafe6a1e5",…
+10:15:28 PM [express] GET /api/cart 401 in 1ms :: {"error":"Authentication required"}
+10:15:28 PM [express] GET /api/footer-pages 200 in 5ms :: [{"id":"27d8342b-4c7e-4d81-9f30-81f92a06bd3…
+10:15:28 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:15:28 PM [express] GET /api/hero-banners 200 in 5ms :: [{"id":"237fef22-73e2-490e-bc13-a48ef20f524…
+10:15:28 PM [express] GET /api/currency/rates 304 in 325ms :: {"rates":{"GHS":1,"EUR":13.333333333333…
+10:15:42 PM [express] GET /api/products/62603aa2-640c-45d8-87b1-293dafe6a1e5 200 in 16ms :: {"id":"62…
+10:15:42 PM [express] GET /api/products/62603aa2-640c-45d8-87b1-293dafe6a1e5/variants 200 in 2ms :: []
+10:15:42 PM [express] GET /api/products/62603aa2-640c-45d8-87b1-293dafe6a1e5/reviews 200 in 19ms :: []
+10:15:42 PM [express] GET /api/cart 401 in 0ms :: {"error":"Authentication required"}
+10:16:02 PM [express] GET /api/platform-settings 200 in 11ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:16:08 PM [express] GET /api/cart 401 in 0ms :: {"error":"Authentication required"}
+10:16:19 PM [express] GET /api/products/f24fce56-8bb2-48af-b3dc-01ec2765b0a0/variants 200 in 16ms :: …
+10:16:19 PM [express] GET /api/products/f24fce56-8bb2-48af-b3dc-01ec2765b0a0 200 in 14ms :: {"id":"f2…
+10:16:19 PM [express] GET /api/products/f24fce56-8bb2-48af-b3dc-01ec2765b0a0/reviews 200 in 22ms :: []
+10:16:19 PM [express] GET /api/cart 401 in 1ms :: {"error":"Authentication required"}
+10:16:26 PM [express] GET /api/cart 401 in 1ms :: {"error":"Authentication required"}
+10:16:30 PM [express] GET /api/categories 200 in 11ms :: [{"id":"37163118-0cc6-49a6-b57b-23efcd89b86a…
+10:16:47 PM [express] GET /api/products 200 in 17ms :: [{"id":"62603aa2-640c-45d8-87b1-293dafe6a1e5",…
+10:19:22 PM [express] POST /api/auth/login 200 in 104ms :: {"user":{"id":"3a9dc881-49ab-454d-827a-319…
+10:19:22 PM [express] GET /api/analytics 200 in 25ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+10:19:23 PM [express] GET /api/users 200 in 11ms :: [{"id":"2d6ce324-af5a-42a2-b28e-14a44157b582","em…
+10:19:23 PM [express] GET /api/auth/me 200 in 59ms :: {"id":"3a9dc881-49ab-454d-827a-319f5f507c6a","e…
+10:19:23 PM [express] GET /api/notifications/unread-count 200 in 67ms :: {"count":0}
+10:19:23 PM [express] GET /api/orders 200 in 83ms :: [{"id":"52d896e6-6b24-466d-83e7-b7296afd8819","o…
+✅ Socket authenticated: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+✅ User connected: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+❌ User disconnected: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+10:19:58 PM [express] GET /api/hero-banners 200 in 11ms :: [{"id":"237fef22-73e2-490e-bc13-a48ef20f52…
+10:20:07 PM [express] GET /api/products 200 in 10ms :: [{"id":"62603aa2-640c-45d8-87b1-293dafe6a1e5",…
+10:20:58 PM [vite] hmr update /src/components/HeroCarousel.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:21:07 PM [vite] hmr update /src/components/HeroCarousel.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:21:13 PM [express] GET /api/platform-settings 304 in 13ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:21:13 PM [express] GET /api/auth/me 304 in 12ms :: {"id":"3a9dc881-49ab-454d-827a-319f5f507c6a","e…
+10:21:13 PM [express] GET /api/currency/rates 304 in 0ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+✅ Socket authenticated: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+✅ User connected: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+10:21:14 PM [express] GET /api/notifications/unread-count 304 in 75ms :: {"count":0}
+10:21:14 PM [express] GET /api/users 304 in 103ms :: [{"id":"2d6ce324-af5a-42a2-b28e-14a44157b582","e…
+10:21:14 PM [express] GET /api/orders 304 in 122ms :: [{"id":"52d896e6-6b24-466d-83e7-b7296afd8819","…
+10:21:14 PM [express] GET /api/analytics 304 in 103ms :: {"totalOrders":7,"paidOrders":7,"totalRevenu…
+❌ User disconnected: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+10:21:25 PM [vite] hmr update /src/components/HeroCarousel.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:21:33 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+10:21:33 PM [express] GET /api/platform-settings 304 in 18ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:21:33 PM [express] GET /api/auth/me 304 in 14ms :: {"id":"3a9dc881-49ab-454d-827a-319f5f507c6a","e…
+10:21:33 PM [express] GET /api/users 304 in 5ms :: [{"id":"2d6ce324-af5a-42a2-b28e-14a44157b582","ema…
+10:21:33 PM [express] GET /api/notifications/unread-count 304 in 42ms :: {"count":0}
+10:21:33 PM [express] GET /api/orders 304 in 62ms :: [{"id":"52d896e6-6b24-466d-83e7-b7296afd8819","o…
+10:21:33 PM [express] GET /api/analytics 304 in 49ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+✅ Socket authenticated: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+✅ User connected: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+❌ User disconnected: superadmin@kiyumart.com (3a9dc881-49ab-454d-827a-319f5f507c6a)
+10:22:10 PM [express] GET /api/products 200 in 14ms :: [{"id":"ff62a71f-d1d0-4890-bda0-149f360df70c",…
+10:22:11 PM [vite] hmr update /src/components/HeroCarousel.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:22:22 PM [express] GET /api/products 200 in 18ms :: [{"id":"ff62a71f-d1d0-4890-bda0-149f360df70c",…
+10:22:27 PM [express] GET /api/products 200 in 4ms :: [{"id":"ff62a71f-d1d0-4890-bda0-149f360df70c","…
+10:22:31 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+10:22:31 PM [express] GET /api/auth/me 404 in 10ms :: {"error":"User not found"}
+10:22:31 PM [express] GET /api/platform-settings 304 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:22:31 PM [express] GET /api/hero-banners 200 in 2ms :: [{"id":"f8078faa-123b-4cc0-8ab5-afcc6df91f7…
+10:23:28 PM [express] POST /api/auth/login 200 in 90ms :: {"user":{"id":"f3359d80-06a5-4cfc-bd4e-ef3b…
+10:23:28 PM [express] GET /api/auth/me 200 in 3ms :: {"id":"f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13","em…
+10:23:28 PM [express] GET /api/notifications/unread-count 304 in 5ms :: {"count":0}
+10:23:28 PM [express] GET /api/analytics 304 in 58ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+10:23:28 PM [express] GET /api/users 200 in 55ms :: [{"id":"115c9e91-cbb1-4adc-9248-0d8caf10e1f1","em…
+10:23:28 PM [express] GET /api/orders 200 in 74ms :: [{"id":"784c73c5-b29c-4681-8377-b67e52334029","o…
+✅ Socket authenticated: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+✅ User connected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+❌ User disconnected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:23:53 PM [express] GET /api/products 200 in 22ms :: [{"id":"ff62a71f-d1d0-4890-bda0-149f360df70c",…
+10:25:48 PM [vite] hmr update /src/components/OrderCard.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:25:54 PM [vite] hmr update /src/components/OrderCard.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:26:02 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+10:26:02 PM [express] GET /api/platform-settings 304 in 21ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:26:02 PM [express] GET /api/auth/me 304 in 16ms :: {"id":"f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13","e…
+10:26:02 PM [express] GET /api/notifications/unread-count 304 in 3ms :: {"count":0}
+10:26:02 PM [express] GET /api/analytics 304 in 25ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+10:26:02 PM [express] GET /api/users 304 in 52ms :: [{"id":"115c9e91-cbb1-4adc-9248-0d8caf10e1f1","em…
+10:26:02 PM [express] GET /api/orders 304 in 73ms :: [{"id":"784c73c5-b29c-4681-8377-b67e52334029","o…
+✅ Socket authenticated: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+✅ User connected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:26:44 PM [express] GET /api/orders/784c73c5-b29c-4681-8377-b67e52334029 200 in 20ms :: {"id":"784c…
+10:26:44 PM [express] GET /api/riders/available 200 in 41ms :: [{"rider":{"id":"44980e19-2c47-4ca5-98…
+10:26:50 PM [express] GET /api/admin/active-riders 200 in 10ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+✅ User connected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+❌ User disconnected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:26:55 PM [express] GET /api/users 200 in 4ms :: []
+10:26:55 PM [express] GET /api/users 200 in 2ms :: []
+10:26:55 PM [express] GET /api/users 200 in 2ms :: []
+10:26:55 PM [express] GET /api/users 200 in 2ms :: []
+10:27:07 PM [express] GET /api/delivery-zones 200 in 7ms :: [{"id":"39a371b4-7532-4a84-9a37-2607f6d02…
+10:27:13 PM [express] GET /api/products 200 in 9ms :: [{"id":"ff62a71f-d1d0-4890-bda0-149f360df70c","…
+10:27:16 PM [express] GET /api/assets/images 200 in 12ms :: [{"filename":"Screenshot 2025-07-13 19144…
+10:27:16 PM [express] GET /api/media-library 200 in 12ms :: []
+10:27:18 PM [express] GET /api/categories 200 in 5ms :: [{"id":"e5325fda-b105-400a-a30f-f29f92520893"…
+10:27:20 PM [express] GET /api/settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:27:30 PM [express] PATCH /api/settings 200 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+10:27:31 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:27:31 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:27:33 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:27:33 PM [express] GET /api/platform-settings 304 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+✅ Socket authenticated: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+✅ User connected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+❌ User disconnected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:27:53 PM [express] GET /api/users 200 in 15ms :: [{"id":"063c98a8-d55f-4eee-8032-870087e29404","em…
+10:27:53 PM [express] GET /api/stores 200 in 3ms :: [{"id":"64bd3584-c689-4314-a228-ca070d762ecc","pr…
+10:27:55 PM [express] GET /api/orders 304 in 45ms :: [{"id":"784c73c5-b29c-4681-8377-b67e52334029","o…
+✅ Socket authenticated: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+✅ User connected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+❌ User disconnected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:29:57 PM [express] GET /api/products/ff62a71f-d1d0-4890-bda0-149f360df70c 200 in 19ms :: {"id":"ff…
+10:29:57 PM [express] GET /api/wishlist 200 in 9ms :: []
+10:29:57 PM [express] GET /api/cart 200 in 39ms :: []
+10:29:57 PM [express] GET /api/products/ff62a71f-d1d0-4890-bda0-149f360df70c/variants 200 in 65ms :: …
+10:29:57 PM [express] GET /api/products/ff62a71f-d1d0-4890-bda0-149f360df70c/reviews 200 in 77ms :: []
+10:29:57 PM [express] GET /api/footer-pages 200 in 5ms :: [{"id":"de1023b9-4486-47ea-b6cf-724b5c00167…
+10:29:57 PM [express] GET /api/settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:30:01 PM [express] GET /api/hero-banners 200 in 2ms :: [{"id":"f8078faa-123b-4cc0-8ab5-afcc6df91f7…
+10:30:11 PM [express] GET /api/products/4e1a6866-5b4d-4a7b-bcfb-5c68e4aeae68/reviews 200 in 25ms :: []
+10:30:11 PM [express] GET /api/products/4e1a6866-5b4d-4a7b-bcfb-5c68e4aeae68/variants 200 in 14ms :: …
+10:30:11 PM [express] GET /api/products/4e1a6866-5b4d-4a7b-bcfb-5c68e4aeae68 200 in 22ms :: {"id":"4e…
+10:30:39 PM [express] GET /api/categories 200 in 17ms :: [{"id":"e5325fda-b105-400a-a30f-f29f92520893…
+10:30:53 PM [express] GET /api/orders 200 in 11ms :: []
+10:31:01 PM [express] GET /api/users/b265a513-f862-46bd-a906-4d24ada9fa07 200 in 4ms :: {"id":"b265a5…
+10:31:01 PM [express] GET /api/sellers/b265a513-f862-46bd-a906-4d24ada9fa07/sales 200 in 3ms :: {"sal…
+❌ User disconnected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:31:10 PM [express] GET /api/auth/me 304 in 2ms :: {"id":"f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13","em…
+10:31:10 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:31:10 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+10:31:10 PM [express] GET /api/users 304 in 23ms :: [{"id":"115c9e91-cbb1-4adc-9248-0d8caf10e1f1","em…
+10:31:10 PM [express] GET /api/notifications/unread-count 304 in 81ms :: {"count":0}
+10:31:10 PM [express] GET /api/orders 304 in 113ms :: [{"id":"784c73c5-b29c-4681-8377-b67e52334029","…
+10:31:10 PM [express] GET /api/analytics 304 in 109ms :: {"totalOrders":7,"paidOrders":7,"totalRevenu…
+✅ Socket authenticated: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+✅ User connected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:31:17 PM [express] GET /api/notifications 200 in 3ms :: []
+10:31:18 PM [express] GET /api/users 304 in 6ms :: [{"id":"063c98a8-d55f-4eee-8032-870087e29404","ema…
+10:31:20 PM [express] GET /api/messages/063c98a8-d55f-4eee-8032-870087e29404 200 in 2ms :: []
+📞 Call offer (voice) from Super Admin to 063c98a8-d55f-4eee-8032-870087e29404
+📞 Call ended by f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13, notifying 063c98a8-d55f-4eee-8032-870087e29404
+📞 Call offer (video) from Super Admin to 063c98a8-d55f-4eee-8032-870087e29404
+📞 Call ended by f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13, notifying 063c98a8-d55f-4eee-8032-870087e29404
+10:31:37 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:31:38 PM [express] GET /api/stores 304 in 2ms :: [{"id":"64bd3584-c689-4314-a228-ca070d762ecc","pr…
+10:31:48 PM [express] GET /api/cart 304 in 25ms :: []
+10:31:48 PM [express] GET /api/footer-pages 304 in 9ms :: [{"id":"de1023b9-4486-47ea-b6cf-724b5c00167…
+10:31:48 PM [express] GET /api/categories 304 in 36ms :: [{"id":"e5325fda-b105-400a-a30f-f29f92520893…
+10:31:48 PM [express] GET /api/hero-banners 304 in 35ms :: [{"id":"f8078faa-123b-4cc0-8ab5-afcc6df91f…
+10:31:48 PM [express] GET /api/products 304 in 9ms :: [{"id":"ff62a71f-d1d0-4890-bda0-149f360df70c","…
+10:31:48 PM [express] GET /api/wishlist 304 in 37ms :: []
+10:33:33 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:34:44 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:35:06 PM [express] GET /api/notifications/unread-count 304 in 9ms :: {"count":0}
+10:35:06 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:35:13 PM [express] PATCH /api/settings 200 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+10:35:13 PM [express] GET /api/platform-settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:35:13 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:35:13 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:35:13 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:36:07 PM [express] GET /api/notifications/unread-count 304 in 8ms :: {"count":0}
+10:36:23 PM [express] PATCH /api/settings 200 in 13ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+10:36:23 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:36:23 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:36:23 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:36:23 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:36:27 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:36:28 PM [express] GET /api/orders 304 in 46ms :: [{"id":"784c73c5-b29c-4681-8377-b67e52334029","o…
+Profile image upload error: { message: 'cloud_name is disabled', name: 'Error', http_code: 401 }
+10:36:39 PM [express] POST /api/profile/upload-image 500 in 531ms :: {"error":"cloud_name is disabled…
+10:36:46 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:36:48 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:39:03 PM [express] PATCH /api/settings 200 in 15ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+10:39:04 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:39:04 PM [express] GET /api/settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:39:04 PM [express] GET /api/settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:39:04 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:41:38 PM [express] GET /api/hero-banners 200 in 8ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b58565…
+❌ User disconnected: superadmin@kiyumart.com (f3359d80-06a5-4cfc-bd4e-ef3bb77c2e13)
+10:42:05 PM [express] GET /api/hero-banners 200 in 8ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b58565…
+10:42:21 PM [express] GET /api/hero-banners 200 in 12ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b5856…
+10:42:27 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:43:36 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+10:43:36 PM [express] GET /api/platform-settings 304 in 15ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:43:36 PM [express] GET /api/auth/me 404 in 16ms :: {"error":"User not found"}
+10:43:55 PM [express] POST /api/auth/login 200 in 86ms :: {"user":{"id":"6e39e147-2542-40f3-b206-84b2…
+10:43:55 PM [express] GET /api/auth/me 200 in 3ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","em…
+10:43:55 PM [express] GET /api/users 200 in 55ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+10:43:55 PM [express] GET /api/notifications/unread-count 200 in 55ms :: {"count":0}
+10:43:55 PM [express] GET /api/orders 200 in 66ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+10:43:55 PM [express] GET /api/analytics 304 in 67ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+10:43:59 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:44:05 PM [express] PATCH /api/settings 200 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+10:44:05 PM [express] GET /api/settings 200 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:44:05 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:44:06 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:44:06 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:45:58 PM [express] GET /api/admin/active-riders 304 in 42ms :: []
+10:45:59 PM [express] GET /api/categories 200 in 4ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf"…
+10:46:18 PM [express] PATCH /api/categories/922e8bc8-507c-4b65-aafa-7b0609317fcf 403 in 1ms :: {"erro…
+10:47:54 PM [express] GET /api/orders/43731ea3-e2a2-4994-acaa-5651ccce5ecd 200 in 33ms :: {"id":"4373…
+10:47:54 PM [express] GET /api/riders/available 200 in 66ms :: [{"rider":{"id":"8e5c7350-e7de-41f7-9e…
+10:48:10 PM [express] GET /api/orders/2a73d16e-0aea-4a3c-a563-b754b1e32799 200 in 11ms :: {"id":"2a73…
+10:48:24 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:48:27 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:49:47 PM [express] PATCH /api/settings 200 in 13ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+10:49:47 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:49:47 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:49:47 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:49:47 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:50:00 PM [express] PATCH /api/settings 200 in 16ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+10:50:00 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:50:00 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:50:00 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:50:00 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:50:01 PM [express] GET /api/notifications/unread-count 304 in 2ms :: {"count":0}
+10:50:12 PM [express] PATCH /api/settings 200 in 16ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+10:50:12 PM [express] GET /api/settings 200 in 6ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:50:12 PM [express] GET /api/platform-settings 200 in 15ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:50:13 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:50:13 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:52:36 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:52:36 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:52:41 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+10:52:41 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+10:54:09 PM [express] GET /api/notifications/unread-count 304 in 10ms :: {"count":0}
+10:54:24 PM [express] PATCH /api/settings 200 in 12ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+10:54:24 PM [express] GET /api/platform-settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:54:24 PM [express] GET /api/settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:54:25 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:54:25 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:54:30 PM [express] PATCH /api/settings 200 in 6ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+10:54:30 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:54:30 PM [express] GET /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:54:30 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:54:31 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:54:39 PM [express] GET /api/notifications/unread-count 200 in 2ms :: {"count":0}
+10:54:48 PM [express] PATCH /api/settings 200 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+10:54:48 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:54:48 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:54:48 PM [express] GET /api/settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:54:49 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+10:57:50 PM [express] GET /api/currency/rates 304 in 0ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+10:57:50 PM [express] GET /api/platform-settings 304 in 19ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+10:57:50 PM [express] GET /api/auth/me 304 in 16ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","e…
+10:57:50 PM [express] GET /api/users 304 in 8ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","ema…
+10:57:50 PM [express] GET /api/analytics 304 in 16ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+10:57:50 PM [express] GET /api/notifications/unread-count 200 in 20ms :: {"count":0}
+10:57:51 PM [express] GET /api/orders 304 in 40ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+10:57:56 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:57:56 PM [express] GET /api/stores 200 in 3ms :: [{"id":"6b78d439-e2fd-4d21-9ea9-9226199166c6","pr…
+10:58:03 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:58:14 PM [express] PATCH /api/settings 200 in 11ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+10:58:14 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:58:14 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:58:14 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+10:58:14 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:58:20 PM [express] GET /api/settings 304 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+10:58:30 PM [express] GET /api/wishlist 304 in 15ms :: []
+10:58:30 PM [express] GET /api/hero-banners 200 in 22ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b5856…
+10:58:30 PM [express] GET /api/products 200 in 14ms :: [{"id":"7412e0f6-a69c-4312-bc49-1101850da192",…
+10:58:30 PM [express] GET /api/footer-pages 200 in 10ms :: [{"id":"a63e0bc4-ba52-40b2-b876-bfe0fe84b9…
+10:58:30 PM [express] GET /api/categories 200 in 10ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf…
+10:58:30 PM [express] GET /api/cart 304 in 13ms :: []
+10:58:41 PM [express] GET /api/products/200608d0-87d7-4058-a9b6-fb9c4b127c6d/variants 200 in 27ms :: …
+10:58:41 PM [express] GET /api/products/200608d0-87d7-4058-a9b6-fb9c4b127c6d 200 in 38ms :: {"id":"20…
+10:58:41 PM [express] GET /api/products/200608d0-87d7-4058-a9b6-fb9c4b127c6d/reviews 200 in 35ms :: []
+10:58:58 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+10:59:03 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+10:59:49 PM [express] GET /api/admin/active-riders 200 in 25ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+10:59:55 PM [express] GET /api/assets/images 200 in 8ms :: [{"filename":"Screenshot 2025-07-13 191442…
+10:59:55 PM [express] GET /api/media-library 200 in 4ms :: []
+11:01:07 PM [express] PATCH /api/settings 200 in 12ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:01:07 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:07 PM [express] GET /api/platform-settings 200 in 6ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:08 PM [express] GET /api/settings 304 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:08 PM [express] GET /api/platform-settings 304 in 18ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:01:12 PM [express] PATCH /api/settings 200 in 15ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:01:12 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:12 PM [express] GET /api/settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:12 PM [express] GET /api/platform-settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:12 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:15 PM [express] PATCH /api/settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:01:15 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:15 PM [express] GET /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:15 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:15 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:20 PM [express] PATCH /api/settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:01:20 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:20 PM [express] GET /api/platform-settings 200 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:20 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:20 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:25 PM [express] PATCH /api/settings 200 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:01:25 PM [express] GET /api/settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:25 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:25 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:01:25 PM [express] GET /api/platform-settings 304 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:01:27 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:02:59 PM [express] GET /api/notifications/unread-count 304 in 9ms :: {"count":0}
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:03:33 PM [express] GET /api/auth/me 401 in 0ms :: {"error":"Authentication required"}
+11:03:33 PM [express] GET /api/currency/rates 200 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:03:33 PM [express] GET /api/platform-settings 200 in 27ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:03:33 PM [express] GET /api/products 200 in 34ms :: [{"id":"7412e0f6-a69c-4312-bc49-1101850da192",…
+11:03:33 PM [express] GET /api/categories 200 in 38ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf…
+11:03:33 PM [express] GET /api/cart 401 in 1ms :: {"error":"Authentication required"}
+11:03:33 PM [express] GET /api/settings 200 in 11ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","…
+11:03:33 PM [express] GET /api/footer-pages 200 in 6ms :: [{"id":"a63e0bc4-ba52-40b2-b876-bfe0fe84b99…
+11:03:33 PM [express] GET /api/hero-banners 200 in 8ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b58565…
+11:05:03 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:05:32 PM [vite] hmr update /src/pages/AdminProducts.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:05:32 PM [vite] hmr update /src/pages/AdminStoresList.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:05:32 PM [vite] hmr update /src/pages/RiderDetailsPage.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:05:32 PM [vite] hmr update /src/pages/Notifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:05:32 PM [vite] hmr update /src/pages/CheckoutConnected.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:05:32 PM [vite] hmr update /src/pages/AdminRiders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:05:32 PM [vite] hmr update /src/pages/AdminSellers.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:29 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:06:29 PM [vite] hmr update /src/pages/AdminProducts.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:29 PM [vite] hmr update /src/pages/AdminStoresList.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:29 PM [vite] hmr update /src/pages/RiderDetailsPage.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:29 PM [vite] hmr update /src/pages/Notifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:29 PM [vite] hmr update /src/pages/CheckoutConnected.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:29 PM [vite] hmr update /src/pages/AdminRiders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:29 PM [vite] hmr update /src/pages/AdminSellers.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:06:37 PM [express] GET /api/notifications/unread-count 200 in 9ms :: {"count":0}
+11:06:45 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:07:10 PM [express] PATCH /api/settings 200 in 16ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:07:10 PM [express] GET /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:07:10 PM [express] GET /api/platform-settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:07:11 PM [express] GET /api/platform-settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:07:11 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:07:22 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:08:16 PM [express] PATCH /api/settings 200 in 14ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:08:16 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:08:16 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:08:16 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:08:16 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:09:06 PM [express] GET /api/notifications/unread-count 304 in 9ms :: {"count":0}
+11:09:11 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:09:17 PM [express] GET /api/products/88efb44c-3e1e-4004-90cd-e5307c6847e3/reviews 200 in 6ms :: []
+11:09:17 PM [express] GET /api/products/88efb44c-3e1e-4004-90cd-e5307c6847e3 200 in 3ms :: {"id":"88e…
+11:09:17 PM [express] GET /api/products/88efb44c-3e1e-4004-90cd-e5307c6847e3/variants 200 in 8ms :: []
+11:09:24 PM [express] GET /api/products/200608d0-87d7-4058-a9b6-fb9c4b127c6d/variants 304 in 2ms :: []
+11:09:24 PM [express] GET /api/products/200608d0-87d7-4058-a9b6-fb9c4b127c6d 304 in 3ms :: {"id":"200…
+11:09:24 PM [express] GET /api/products/200608d0-87d7-4058-a9b6-fb9c4b127c6d/reviews 304 in 13ms :: []
+11:10:25 PM [express] GET /api/notifications/unread-count 200 in 8ms :: {"count":0}
+11:10:27 PM [express] GET /api/notifications 304 in 2ms :: []
+11:10:41 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:10:41 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:11:15 PM [express] GET /api/notifications/unread-count 200 in 10ms :: {"count":0}
+11:11:39 PM [express] PATCH /api/settings 200 in 17ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:11:39 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:11:39 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:11:39 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:11:39 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:11:45 PM [express] GET /api/notifications/unread-count 200 in 3ms :: {"count":0}
+11:11:56 PM [express] PATCH /api/settings 200 in 13ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:11:56 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:11:56 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:11:57 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:11:57 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:02 PM [express] PATCH /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:12:02 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:02 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:02 PM [express] GET /api/platform-settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:02 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:08 PM [express] PATCH /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:12:08 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:08 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:08 PM [express] GET /api/settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:08 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:09 PM [express] PATCH /api/settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:12:09 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:09 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:09 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:10 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:19 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:49 PM [express] PATCH /api/settings 200 in 14ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:12:50 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:12:50 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:50 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:12:50 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:04 PM [express] PATCH /api/settings 200 in 12ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:13:04 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:04 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:04 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:04 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:08 PM [express] GET /api/notifications/unread-count 200 in 2ms :: {"count":0}
+11:13:08 PM [express] PATCH /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:13:08 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:08 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:08 PM [express] GET /api/settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:09 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:12 PM [express] PATCH /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:13:12 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:12 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:12 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:12 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:16 PM [express] PATCH /api/settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:13:17 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:17 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:17 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:13:17 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:13:29 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:13:30 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:14:37 PM [express] GET /api/platform-settings 304 in 14ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:14:37 PM [express] GET /api/auth/me 304 in 12ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","e…
+11:14:37 PM [express] GET /api/currency/rates 304 in 0ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:14:38 PM [express] GET /api/analytics 304 in 28ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:14:38 PM [express] GET /api/users 304 in 12ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+11:14:38 PM [express] GET /api/notifications/unread-count 304 in 54ms :: {"count":0}
+11:14:38 PM [express] GET /api/orders 304 in 74ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:14:44 PM [express] GET /api/categories 304 in 3ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf"…
+11:14:45 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:15:16 PM [express] GET /api/notifications/unread-count 304 in 9ms :: {"count":0}
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:16:38 PM [express] GET /api/platform-settings 304 in 82ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:16:38 PM [express] GET /api/auth/me 304 in 81ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","e…
+11:16:38 PM [express] GET /api/notifications/unread-count 200 in 15ms :: {"count":0}
+11:16:38 PM [express] GET /api/currency/rates 304 in 421ms :: {"rates":{"GHS":1,"EUR":13.333333333333…
+11:16:38 PM [express] GET /api/analytics 304 in 53ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:16:38 PM [express] GET /api/users 304 in 96ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:16:39 PM [express] GET /api/orders 304 in 128ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","…
+11:16:42 PM [express] GET /api/settings 304 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:16:52 PM [express] PATCH /api/settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:16:52 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:18:40 PM [express] POST /api/auth/login 200 in 88ms :: {"user":{"id":"6e39e147-2542-40f3-b206-84b2…
+11:18:57 PM [express] POST /api/auth/login 200 in 87ms :: {"user":{"id":"6e39e147-2542-40f3-b206-84b2…
+11:19:21 PM [express] PATCH /api/settings 200 in 14ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:19:36 PM [express] GET /api/notifications/unread-count 200 in 8ms :: {"count":0}
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:19:42 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:19:50 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:19:50 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:19:50 PM [express] GET /api/auth/me 304 in 4ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","em…
+11:19:50 PM [express] GET /api/analytics 304 in 11ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:19:50 PM [express] GET /api/notifications/unread-count 200 in 3ms :: {"count":0}
+11:19:50 PM [express] GET /api/users 304 in 6ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","ema…
+11:19:50 PM [express] GET /api/orders 304 in 59ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:20:00 PM [express] GET /api/admin/active-riders 200 in 10ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:20:01 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:20:03 PM [express] GET /api/categories 304 in 7ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf"…
+11:21:05 PM [express] GET /api/notifications/unread-count 304 in 10ms :: {"count":0}
+11:21:08 PM [express] PATCH /api/settings 200 in 10ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:21:08 PM [express] GET /api/settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:21:08 PM [express] GET /api/platform-settings 200 in 14ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:21:09 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:21:09 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:21:12 PM [express] PATCH /api/settings 200 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:21:13 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:21:13 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:21:13 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:21:13 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:21:26 PM [express] PATCH /api/settings 200 in 14ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:21:26 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:21:26 PM [express] GET /api/settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:21:27 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:21:27 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:21:35 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:21:35 PM [express] GET /api/hero-banners 304 in 3ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b58565…
+11:21:35 PM [express] GET /api/products 304 in 19ms :: [{"id":"7412e0f6-a69c-4312-bc49-1101850da192",…
+11:21:35 PM [express] GET /api/cart 304 in 7ms :: []
+11:21:35 PM [express] GET /api/footer-pages 304 in 14ms :: [{"id":"a63e0bc4-ba52-40b2-b876-bfe0fe84b9…
+11:21:35 PM [express] GET /api/wishlist 304 in 18ms :: []
+11:21:45 PM [express] GET /api/categories 304 in 32ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf…
+11:22:32 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:22:32 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:22:35 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:22:35 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:22:36 PM [express] GET /api/platform-settings 304 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:22:40 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:22:57 PM [express] PATCH /api/settings 200 in 18ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:22:57 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:22:57 PM [express] GET /api/settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:22:57 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:22:57 PM [express] GET /api/settings 304 in 11ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","…
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:23:04 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:23:04 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:23:04 PM [express] GET /api/auth/me 304 in 5ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","em…
+11:23:05 PM [express] GET /api/notifications/unread-count 200 in 3ms :: {"count":0}
+11:23:05 PM [express] GET /api/analytics 304 in 20ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:23:05 PM [express] GET /api/users 304 in 45ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+11:23:05 PM [express] GET /api/orders 304 in 69ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:23:07 PM [express] GET /api/settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:23:15 PM [express] PATCH /api/settings 200 in 12ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:23:16 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:23:16 PM [express] GET /api/settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:23:16 PM [express] GET /api/platform-settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:23:16 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:23:20 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:23:20 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:23:20 PM [express] GET /api/auth/me 304 in 3ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","em…
+11:23:21 PM [express] GET /api/notifications/unread-count 304 in 3ms :: {"count":0}
+11:23:21 PM [express] GET /api/analytics 304 in 9ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue"…
+11:23:21 PM [express] GET /api/users 304 in 16ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+11:23:21 PM [express] GET /api/orders 304 in 62ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:23:23 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:23:30 PM [vite] hmr update /src/pages/AdminNotifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:30 PM [vite] hmr update /src/pages/SellerNotifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:30 PM [vite] hmr update /src/pages/SellerPaymentSetup.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:31 PM [vite] hmr update /src/pages/AgentTickets.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:31 PM [vite] hmr update /src/pages/AdminOrders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:31 PM [vite] hmr update /src/pages/Orders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:31 PM [vite] hmr update /src/pages/SellerOrders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:31 PM [vite] hmr update /src/pages/RiderDetailsPage.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:31 PM [vite] hmr update /src/pages/CheckoutConnected.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/RiderDetailsPage.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/AdminNotifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/SellerNotifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/SellerPaymentSetup.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/AgentTickets.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/AdminOrders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/Orders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/SellerOrders.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:23:33 PM [vite] hmr update /src/pages/CheckoutConnected.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:24:16 PM [express] GET /api/platform-settings 304 in 11ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:24:22 PM [express] PATCH /api/settings 200 in 10ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:24:23 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:24:23 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:24:23 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:24:23 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:24:23 PM [express] GET /api/notifications/unread-count 304 in 4ms :: {"count":0}
+11:24:33 PM [express] PATCH /api/settings 200 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:24:33 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:24:33 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:24:33 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:24:33 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:24:36 PM [express] GET /api/admin/active-riders 304 in 33ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:26:25 PM [express] GET /api/platform-settings 304 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:26:33 PM [express] GET /api/cart 304 in 5ms :: []
+11:26:33 PM [express] GET /api/hero-banners 304 in 5ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b58565…
+11:26:33 PM [express] GET /api/categories 200 in 9ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf"…
+11:26:33 PM [express] GET /api/footer-pages 304 in 23ms :: [{"id":"a63e0bc4-ba52-40b2-b876-bfe0fe84b9…
+11:26:33 PM [express] GET /api/products 304 in 26ms :: [{"id":"7412e0f6-a69c-4312-bc49-1101850da192",…
+11:26:33 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:26:33 PM [express] GET /api/wishlist 304 in 2ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:27:45 PM [express] GET /api/platform-settings 200 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:27:52 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:27:52 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:27:54 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:27:54 PM [vite] hmr update /src/App.tsx?v=JcFZYKqwzyUpei_X25g24, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminBranding.tsx
+11:27:54 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:27:55 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:27:55 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:28:16 PM [express] PATCH /api/settings 200 in 12ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:28:19 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:28:52 PM [express] PATCH /api/settings 200 in 17ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:28:53 PM [express] GET /api/platform-settings 200 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:28:53 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:28:53 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:28:53 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:29:01 PM [express] GET /api/platform-settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:29:10 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:29:16 PM [express] GET /api/assets/images 304 in 7ms :: [{"filename":"Screenshot 2025-07-13 191442…
+11:29:16 PM [express] GET /api/media-library 304 in 2ms :: []
+11:29:21 PM [express] GET /api/users 200 in 11ms :: [{"id":"5b8e89e7-783d-4aaf-a5d6-e9ae5cff989e","em…
+11:29:54 PM [express] GET /api/platform-settings 200 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:33:26 PM [express] GET /api/platform-settings 200 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:33:27 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:34:33 PM [express] GET /api/platform-settings 304 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+📞 Call initiated from Super Admin (6e39e147-2542-40f3-b206-84b209f2f612) to 13f6d110-0831-4f65-827f-31045e43da48
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+📞 Call ended by 6e39e147-2542-40f3-b206-84b209f2f612, notifying 13f6d110-0831-4f65-827f-31045e43da48
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:34:51 PM [express] GET /api/notifications/unread-count 304 in 15ms :: {"count":0}
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:34:57 PM [express] GET /api/analytics 304 in 10ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:34:57 PM [express] GET /api/users 304 in 20ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+11:34:57 PM [express] GET /api/orders 304 in 53ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+11:34:58 PM [express] GET /api/admin/active-riders 304 in 16ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:35:00 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:35:10 PM [express] PATCH /api/settings 200 in 13ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:35:10 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:35:10 PM [express] GET /api/settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:35:10 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:35:10 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:36:27 PM [express] GET /api/platform-settings 304 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:39:38 PM [express] GET /api/platform-settings 200 in 10ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:40:31 PM [express] GET /api/notifications/unread-count 304 in 16ms :: {"count":0}
+11:40:32 PM [express] GET /api/users 304 in 5ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","ema…
+11:40:32 PM [express] GET /api/analytics 304 in 9ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue"…
+11:40:32 PM [express] GET /api/orders 304 in 36ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:40:36 PM [express] GET /api/categories 304 in 2ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf"…
+11:40:36 PM [express] GET /api/media-library 304 in 3ms :: []
+11:40:36 PM [express] GET /api/assets/images 304 in 6ms :: [{"filename":"Screenshot 2025-07-13 191442…
+11:40:46 PM [express] GET /api/platform-settings 200 in 6ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:42:22 PM [express] GET /api/platform-settings 200 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:42:32 PM [express] GET /api/platform-settings 200 in 12ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:42:38 PM [express] PATCH /api/settings 200 in 6ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:42:38 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:42:38 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:42:38 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:42:39 PM [express] GET /api/settings 304 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:42:43 PM [vite] hmr update /src/pages/AgentCustomers.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/RiderActiveRoute.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/AdminProducts.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/SellerDetailsPage.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/AdminDeliveryZones.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/RiderEarnings.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/CustomerSupport.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/AgentNotifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/AdminMessages.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:43 PM [vite] hmr update /src/pages/RiderDeliveries.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/RiderActiveRoute.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/AdminProducts.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/AgentCustomers.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/RiderEarnings.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/SellerDetailsPage.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/AdminDeliveryZones.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/CustomerSupport.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/AgentNotifications.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/RiderDeliveries.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:42:45 PM [vite] hmr update /src/pages/AdminMessages.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:43:42 PM [express] GET /api/platform-settings 304 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:43:46 PM [express] GET /api/currency/rates 304 in 0ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:43:46 PM [express] GET /api/auth/me 304 in 8ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","em…
+11:43:46 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:43:47 PM [express] GET /api/users 304 in 51ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+11:43:47 PM [express] GET /api/analytics 304 in 50ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:43:47 PM [express] GET /api/notifications/unread-count 200 in 60ms :: {"count":0}
+11:43:47 PM [express] GET /api/orders 304 in 77ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:43:49 PM [express] GET /api/settings 304 in 9ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:43:53 PM [express] PATCH /api/settings 200 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:43:53 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:43:53 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:43:53 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:43:53 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:44:02 PM [express] PATCH /api/settings 200 in 7ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:44:03 PM [express] GET /api/platform-settings 200 in 11ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:44:03 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:44:03 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:44:03 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:44:19 PM [express] GET /api/notifications/unread-count 304 in 9ms :: {"count":0}
+11:44:28 PM [express] PATCH /api/settings 200 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa",…
+11:44:28 PM [express] GET /api/settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:44:28 PM [express] GET /api/platform-settings 200 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:44:28 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:44:28 PM [express] GET /api/settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:44:39 PM [express] GET /api/hero-banners 304 in 18ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b5856…
+11:44:39 PM [express] GET /api/settings 304 in 18ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","…
+11:44:39 PM [express] GET /api/cart 304 in 8ms :: []
+11:44:39 PM [express] GET /api/categories 304 in 4ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf"…
+11:44:39 PM [express] GET /api/products 304 in 12ms :: [{"id":"7412e0f6-a69c-4312-bc49-1101850da192",…
+11:44:39 PM [express] GET /api/footer-pages 304 in 2ms :: [{"id":"a63e0bc4-ba52-40b2-b876-bfe0fe84b99…
+11:44:39 PM [express] GET /api/wishlist 304 in 4ms :: []
+11:45:43 PM [express] GET /api/platform-settings 304 in 8ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:45:45 PM [express] GET /api/categories 304 in 10ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf…
+11:46:22 PM [express] GET /api/notifications/unread-count 200 in 8ms :: {"count":0}
+11:46:36 PM [express] GET /api/admin/active-riders 304 in 30ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:47:15 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:47:17 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:47:53 PM [express] GET /api/platform-settings 200 in 17ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:49:47 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:49:47 PM [express] GET /api/platform-settings 200 in 13ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:49:47 PM [express] GET /api/auth/me 304 in 11ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","e…
+11:49:47 PM [express] GET /api/notifications/unread-count 200 in 4ms :: {"count":0}
+11:49:47 PM [express] GET /api/analytics 304 in 17ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:49:47 PM [express] GET /api/users 304 in 43ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","em…
+11:49:47 PM [express] GET /api/orders 304 in 57ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:50:03 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:50:06 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:50:17 PM [express] GET /api/currency/rates 304 in 1ms :: {"rates":{"GHS":1,"EUR":13.33333333333333…
+11:50:17 PM [express] GET /api/platform-settings 304 in 14ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:50:17 PM [express] GET /api/auth/me 304 in 19ms :: {"id":"6e39e147-2542-40f3-b206-84b209f2f612","e…
+11:50:17 PM [express] GET /api/users 304 in 5ms :: [{"id":"8c764a7d-ec75-468d-8860-59be0dc59a7d","ema…
+11:50:17 PM [express] GET /api/notifications/unread-count 304 in 10ms :: {"count":0}
+11:50:17 PM [express] GET /api/analytics 304 in 10ms :: {"totalOrders":7,"paidOrders":7,"totalRevenue…
+11:50:17 PM [express] GET /api/orders 304 in 54ms :: [{"id":"2a73d16e-0aea-4a3c-a563-b754b1e32799","o…
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:50:24 PM [express] GET /api/platform-settings 304 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:50:25 PM [express] GET /api/settings 304 in 5ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:50:48 PM [express] PATCH /api/settings 200 in 15ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:50:48 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:50:48 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:50:48 PM [express] GET /api/platform-settings 304 in 4ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:50:48 PM [express] GET /api/settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:50:56 PM [express] GET /api/notifications/unread-count 304 in 2ms :: {"count":0}
+11:51:10 PM [express] PATCH /api/settings 200 in 15ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa"…
+11:51:10 PM [express] GET /api/settings 200 in 3ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:51:10 PM [express] GET /api/platform-settings 200 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:51:11 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:51:11 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:51:16 PM [express] GET /api/footer-pages 304 in 9ms :: [{"id":"a63e0bc4-ba52-40b2-b876-bfe0fe84b99…
+11:51:16 PM [express] GET /api/cart 304 in 7ms :: []
+11:51:16 PM [express] GET /api/products 304 in 30ms :: [{"id":"7412e0f6-a69c-4312-bc49-1101850da192",…
+11:51:16 PM [express] GET /api/settings 304 in 1ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022944efa","i…
+11:51:16 PM [express] GET /api/hero-banners 304 in 2ms :: [{"id":"32cce85f-39ff-4f46-beb9-c2e21b58565…
+11:51:16 PM [express] GET /api/categories 304 in 4ms :: [{"id":"922e8bc8-507c-4b65-aafa-7b0609317fcf"…
+11:51:16 PM [express] GET /api/wishlist 304 in 4ms :: []
+11:55:00 PM [express] GET /api/platform-settings 200 in 12ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-290022…
+11:55:03 PM [express] GET /api/platform-settings 304 in 2ms :: {"id":"fda78b54-2e3b-4f4a-8f4e-2900229…
+11:55:12 PM [express] GET /api/admin/active-riders 304 in 26ms :: []
+✅ Socket authenticated: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+✅ User connected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+❌ User disconnected: superadmin@kiyumart.com (6e39e147-2542-40f3-b206-84b209f2f612)
+11:55:42 PM [express] GET /api/notifications/unread-count 304 in 9ms :: {"count":0}
+11:55:53 PM [vite] hmr update /src/pages/AdminStoreManager.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:55:53 PM [vite] hmr update /src/pages/AdminCategoryManager.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24, /src/pages/AdminFooterPagesManager.tsx, /src/pages/AdminProductEdit.tsx, /src/pages/AdminProductCreate.tsx
+11:55:53 PM [vite] hmr update /src/pages/AdminBranding.tsx, /src/index.css?v=JcFZYKqwzyUpei_X25g24
+11:55:56 PM [vite] Internal server error: Failed to resolve import "@db/schema" from "client/src/pages/AdminBranding.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /workspaces/KiyuMart/client/src/pages/AdminBranding.tsx:7:28
+  22 |  import { zodResolver } from "@hookform/resolvers/zod";
+  23 |  import { z } from "zod";
+  24 |  import { DB_DEFAULTS } from "@db/schema";
+     |                               ^
+  25 |  import DashboardLayout from "@/components/DashboardLayout";
+  26 |  import { applyBranding } from "@/hooks/useBranding";
+      at TransformPluginContext._formatError (/workspaces/KiyuMart/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (/workspaces/KiyuMart/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (/workspaces/KiyuMart/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async <anonymous> (/workspaces/KiyuMart/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39)
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (/workspaces/KiyuMart/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (/workspaces/KiyuMart/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (/workspaces/KiyuMart/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)

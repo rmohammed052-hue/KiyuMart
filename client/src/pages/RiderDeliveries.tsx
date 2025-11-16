@@ -59,7 +59,7 @@ export default function RiderDeliveries() {
       case "assigned": return "bg-blue-500";
       case "picked_up": return "bg-purple-500";
       case "in_transit": return "bg-orange-500";
-      case "delivered": return "bg-green-500";
+      case "delivered": return "bg-primary";
       default: return "bg-gray-500";
     }
   };
@@ -120,7 +120,7 @@ export default function RiderDeliveries() {
 
                   <div className="space-y-2 text-sm">
                     <div className="flex items-start gap-2">
-                      <MapPin className="h-4 w-4 mt-0.5 text-green-500" />
+                      <MapPin className="h-4 w-4 mt-0.5 text-primary" />
                       <div>
                         <p className="font-medium">Pickup</p>
                         <p className="text-muted-foreground">{delivery.pickupAddress}</p>

@@ -493,7 +493,7 @@ function ApproveRejectDialog({ riderData }: { riderData: Rider }) {
                 size="sm"
                 onClick={() => setAction('approve')}
                 data-testid={`button-approve-${riderData.id}`}
-                className="bg-green-600 hover:bg-green-700"
+                className="bg-primary hover:brightness-110 text-primary-foreground"
               >
                 <CheckCircle className="h-3 w-3 mr-1" />
                 Approve
@@ -665,7 +665,7 @@ export default function AdminRiders() {
                       </div>
                       <div className="flex items-center gap-2 mt-2">
                         {rider.isActive ? (
-                          <Badge className="bg-green-500" data-testid={`badge-status-${rider.id}`}>
+                          <Badge className="bg-primary text-primary-foreground" data-testid={`badge-status-${rider.id}`}>
                             <CheckCircle className="h-3 w-3 mr-1" />
                             Active
                           </Badge>

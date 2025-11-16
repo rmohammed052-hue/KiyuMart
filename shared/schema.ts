@@ -2,6 +2,7 @@ import { sql } from "drizzle-orm";
 import { pgTable, text, varchar, integer, decimal, timestamp, boolean, jsonb, pgEnum, unique, serial, index } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+import { DB_DEFAULTS } from "./theme-constants";
 
 export const userRoleEnum = pgEnum("user_role", ["super_admin", "admin", "seller", "buyer", "rider", "agent"]);
 export const orderStatusEnum = pgEnum("order_status", ["pending", "processing", "delivering", "delivered", "cancelled", "disputed"]);
@@ -87,15 +88,15 @@ export const platformSettings = pgTable("platform_settings", {
   isMultiVendor: boolean("is_multi_vendor").default(false),
   platformName: text("platform_name").default("ModestGlow"),
   logo: text("logo"),
-  primaryColor: text("primary_color").default("#1e7b5f"),
-  secondaryColor: text("secondary_color").default("#2c3e50"),
-  accentColor: text("accent_color").default("#e74c3c"),
-  lightBgColor: text("light_bg_color").default("#ffffff"),
-  lightTextColor: text("light_text_color").default("#000000"),
-  darkBgColor: text("dark_bg_color").default("#1a1a1a"),
-  darkTextColor: text("dark_text_color").default("#ffffff"),
-  lightCardColor: text("light_card_color").default("#f8f9fa"),
-  darkCardColor: text("dark_card_color").default("#2a2a2a"),
+  primaryColor: text("primary_color").default(DB_DEFAULTS.primaryColor),
+  secondaryColor: text("secondary_color").default(DB_DEFAULTS.secondaryColor),
+  accentColor: text("accent_color").default(DB_DEFAULTS.accentColor),
+  lightBgColor: text("light_bg_color").default(DB_DEFAULTS.lightBgColor),
+  lightTextColor: text("light_text_color").default(DB_DEFAULTS.lightTextColor),
+  darkBgColor: text("dark_bg_color").default(DB_DEFAULTS.darkBgColor),
+  darkTextColor: text("dark_text_color").default(DB_DEFAULTS.darkTextColor),
+  lightCardColor: text("light_card_color").default(DB_DEFAULTS.lightCardColor),
+  darkCardColor: text("dark_card_color").default(DB_DEFAULTS.darkCardColor),
   onboardingImages: text("onboarding_images").array(),
   defaultCurrency: text("default_currency").default("GHS"),
   paystackPublicKey: text("paystack_public_key"),

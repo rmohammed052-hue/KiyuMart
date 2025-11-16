@@ -388,12 +388,12 @@ export default function SellerPaymentSetup() {
                     </div>
 
                     {verified && form.getValues("accountName") && (
-                      <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
+                      <div className="p-4 bg-primary/10 dark:bg-primary/20 border border-primary/40 dark:border-primary/50 rounded-md">
                         <div className="flex items-center gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-green-600" />
+                          <CheckCircle2 className="h-5 w-5 text-primary" />
                           <div>
-                            <p className="font-medium text-green-900 dark:text-green-100">Account Verified</p>
-                            <p className="text-sm text-green-700 dark:text-green-300" data-testid="text-account-name">
+                            <p className="font-medium text-primary">Account Verified</p>
+                            <p className="text-sm text-primary" data-testid="text-account-name">
                               {form.getValues("accountName")}
                             </p>
                           </div>

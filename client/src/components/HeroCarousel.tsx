@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -27,6 +28,14 @@ export default function HeroCarousel() {
   const [, navigate] = useLocation();
   const { t } = useLanguage();
 
+  const autoplayPlugin = useRef(
+    Autoplay({
+          delay: 4000,
+          stopOnInteraction: false,
+          stopOnMouseEnter: true,
+    })
+  );
+
   const { data: banners = [], isLoading } = useQuery<HeroBanner[]>({
     queryKey: ["/api/hero-banners"],
   });
@@ -43,12 +52,7 @@ export default function HeroCarousel() {
         align: "start",
         loop: true,
       }}
-      plugins={[
-        Autoplay({
-          delay: 5000,
-          stopOnInteraction: true,
-        }),
-      ]}
+      plugins={[autoplayPlugin.current]}
       className="w-full"
     >
       <CarouselContent>

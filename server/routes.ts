@@ -3178,8 +3178,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (!updateData.cloudinaryApiSecret || updateData.cloudinaryApiSecret === "••••••••••••••••") {
         updateData.cloudinaryApiSecret = previousSettings.cloudinaryApiSecret;
       }
+
+      // Debug: log incoming branding-related fields and previous values
+      const brandingKeys = [
+        'primaryColor','secondaryColor','accentColor','lightBgColor','lightTextColor','lightCardColor','darkBgColor','darkTextColor','darkCardColor'
+      ];
+      const diff: Record<string, { before: any; after: any }> = {};
+      for (const key of brandingKeys) {
+        if (key in updateData) {
+          diff[key] = { before: (previousSettings as any)[key], after: (updateData as any)[key] };
+        }
+      }
+      console.log('[BRANDING PATCH] Incoming update diff:', diff);
       
       const settings = await storage.updatePlatformSettings(updateData);
+
+      // After update: log resulting settings slice
+      const resulting: Record<string, any> = {};
+      for (const key of brandingKeys) {
+        resulting[key] = (settings as any)[key];
+      }
+      console.log('[BRANDING PATCH] Resulting settings slice:', resulting);
       
       // Handle automatic store updates when multi-vendor mode is toggled
       if (previousSettings.isMultiVendor !== settings.isMultiVendor) {

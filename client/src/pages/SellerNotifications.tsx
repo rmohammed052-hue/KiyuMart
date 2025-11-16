@@ -61,7 +61,7 @@ export default function SellerNotifications() {
   const getTypeColor = (type: string) => {
     switch (type) {
       case "order": return "bg-blue-500";
-      case "payment": return "bg-green-500";
+      case "payment": return "bg-primary text-primary-foreground";
       case "delivery": return "bg-purple-500";
       case "alert": return "bg-red-500";
       default: return "bg-gray-500";

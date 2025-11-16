@@ -385,7 +385,7 @@ export default function AdminStoresList() {
                       </TableCell>
                       <TableCell>
                         {store.isActive ? (
-                          <Badge className="bg-green-500" data-testid={`badge-status-${store.id}`}>Active</Badge>
+                          <Badge className="bg-primary text-primary-foreground" data-testid={`badge-status-${store.id}`}>Active</Badge>
                         ) : (
                           <Badge variant="secondary" data-testid={`badge-status-${store.id}`}>Inactive</Badge>
                         )}

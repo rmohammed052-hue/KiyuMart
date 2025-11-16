@@ -171,7 +171,7 @@ export default function CustomerSupport() {
     switch (status) {
       case "open": return "bg-yellow-500";
       case "assigned": return "bg-blue-500";
-      case "resolved": return "bg-green-500";
+      case "resolved": return "bg-primary";
       default: return "bg-gray-500";
     }
   };

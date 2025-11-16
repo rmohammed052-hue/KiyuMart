@@ -227,11 +227,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 85,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_0558c52e.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
-          "@assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
-          "@assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_0558c52e.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -242,11 +242,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 92,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
-          "@assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
-          "@assets/stock_images/muslim_woman_wearing_4dff5032.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_4dff5032.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -257,11 +257,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 78,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_b835d03b.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_d97c91f9.jpg",
-          "@assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
-          "@assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_b835d03b.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_d97c91f9.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -272,11 +272,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 65,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_e715a79d.jpg",
-          "@assets/stock_images/muslim_woman_wearing_75f65901.jpg",
-          "@assets/stock_images/muslim_woman_wearing_a24655f6.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_0558c52e.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_e715a79d.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_75f65901.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_a24655f6.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_0558c52e.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -287,11 +287,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 95,
         images: [
-          "@assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
-          "@assets/stock_images/muslim_woman_wearing_f39c5f81.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
-          "@assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg"
+          "/attached_assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_f39c5f81.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -302,11 +302,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 58,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
-          "@assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg",
-          "@assets/stock_images/muslim_woman_wearing_4dff5032.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_4dff5032.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -317,11 +317,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 82,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_d97c91f9.jpg",
-          "@assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_b835d03b.jpg",
-          "@assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_e715a79d.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_d97c91f9.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_b835d03b.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_e715a79d.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -332,11 +332,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 71,
         images: [
-          "@assets/stock_images/muslim_woman_wearing_75f65901.jpg",
-          "@assets/stock_images/muslim_woman_wearing_a24655f6.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
-          "@assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_0558c52e.jpg"
+          "/attached_assets/stock_images/muslim_woman_wearing_75f65901.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_a24655f6.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_0558c52e.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -347,11 +347,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 67,
         images: [
-          "@assets/stock_images/muslim_woman_wearing_f39c5f81.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
-          "@assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
-          "@assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg"
+          "/attached_assets/stock_images/muslim_woman_wearing_f39c5f81.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -362,11 +362,11 @@ async function seed() {
         categoryId: hijabsCat.id,
         stock: 45,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg",
-          "@assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
-          "@assets/stock_images/muslim_woman_wearing_4dff5032.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_4dff5032.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/hijab_demo.mp4"
       },
@@ -379,11 +379,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 52,
         images: [
-          "@assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
+          "/attached_assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -394,11 +394,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 68,
         images: [
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2271f738.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg"
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2271f738.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -409,11 +409,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 38,
         images: [
-          "@assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg",
-          "@assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg"
+          "/attached_assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -424,11 +424,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 74,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2271f738.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2271f738.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -439,11 +439,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 56,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg",
-          "@assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_30efae18.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_30efae18.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -454,11 +454,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 44,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -469,11 +469,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 42,
         images: [
-          "@assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2271f738.jpg",
-          "@assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg"
+          "/attached_assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2271f738.jpg",
+          "/attached_assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -484,11 +484,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 61,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
-          "@assets/stock_images/islamic_abaya_dress__860c9bb0.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__860c9bb0.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -499,11 +499,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 72,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -514,11 +514,11 @@ async function seed() {
         categoryId: abayasCat.id,
         stock: 48,
         images: [
-          "@assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2271f738.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg"
+          "/attached_assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2271f738.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/abaya_demo.mp4"
       },
@@ -531,11 +531,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 77,
         images: [
-          "@assets/stock_images/navy_blue_modest_dre_14544497.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_307924af.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_e97421f4.jpg"
+          "/attached_assets/stock_images/navy_blue_modest_dre_14544497.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_307924af.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_e97421f4.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -546,11 +546,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 64,
         images: [
-          "@assets/stock_images/navy_blue_modest_dre_307924af.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_14544497.jpg"
+          "/attached_assets/stock_images/navy_blue_modest_dre_307924af.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_14544497.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -561,11 +561,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 39,
         images: [
-          "@assets/stock_images/emerald_green_satin__71f2fadb.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg"
+          "/attached_assets/stock_images/emerald_green_satin__71f2fadb.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -576,11 +576,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 88,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2271f738.jpg",
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2271f738.jpg",
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -591,11 +591,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 59,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_14544497.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_14544497.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -606,11 +606,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 71,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg",
-          "@assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_307924af.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_307924af.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -621,11 +621,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 66,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg",
-          "@assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__860c9bb0.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -636,11 +636,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 53,
         images: [
-          "@assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
-          "@assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg"
+          "/attached_assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
+          "/attached_assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -651,11 +651,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 58,
         images: [
-          "@assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_14544497.jpg"
+          "/attached_assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_14544497.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -666,11 +666,11 @@ async function seed() {
         categoryId: dressesCat.id,
         stock: 62,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_307924af.jpg",
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_307924af.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/dress_demo.mp4"
       },
@@ -683,11 +683,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 95,
         images: [
-          "@assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_0558c52e.jpg",
-          "@assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg"
+          "/attached_assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_0558c52e.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -698,11 +698,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 87,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
-          "@assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
-          "@assets/stock_images/muslim_woman_wearing_4dff5032.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_4dff5032.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -713,11 +713,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 76,
         images: [
-          "@assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
-          "@assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
-          "@assets/stock_images/muslim_woman_wearing_75f65901.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg"
+          "/attached_assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_75f65901.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -728,11 +728,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 54,
         images: [
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2271f738.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
-          "@assets/stock_images/muslim_woman_wearing_a24655f6.jpg"
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2271f738.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_a24655f6.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -743,11 +743,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 98,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_b835d03b.jpg",
-          "@assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_d97c91f9.jpg",
-          "@assets/stock_images/muslim_woman_wearing_f39c5f81.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_b3749b7c.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_b835d03b.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_d97c91f9.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_f39c5f81.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -758,11 +758,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 63,
         images: [
-          "@assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg",
-          "@assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
-          "@assets/stock_images/islamic_abaya_dress__860c9bb0.jpg"
+          "/attached_assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__860c9bb0.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -773,11 +773,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 81,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
-          "@assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
-          "@assets/stock_images/muslim_woman_wearing_2627c21c.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_2627c21c.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -788,11 +788,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 47,
         images: [
-          "@assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg"
+          "/attached_assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -803,11 +803,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 92,
         images: [
-          "@assets/stock_images/muslim_woman_wearing_4dff5032.jpg",
-          "@assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
-          "@assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg"
+          "/attached_assets/stock_images/muslim_woman_wearing_4dff5032.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_7b95575d.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -818,11 +818,11 @@ async function seed() {
         categoryId: accessoriesCat.id,
         stock: 55,
         images: [
-          "@assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_e715a79d.jpg",
-          "@assets/stock_images/muslim_woman_wearing_75f65901.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
-          "@assets/stock_images/muslim_woman_wearing_a24655f6.jpg"
+          "/attached_assets/stock_images/hijab_scarf_collecti_dda2fcc3.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_e715a79d.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_75f65901.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_72f3ae4b.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_a24655f6.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/accessories_demo.mp4"
       },
@@ -835,11 +835,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 84,
         images: [
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
-          "@assets/stock_images/islamic_abaya_dress__2271f738.jpg"
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_2d59a3ef.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_30efae18.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__2271f738.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -850,11 +850,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 58,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_14544497.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_307924af.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_14544497.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_307924af.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -865,11 +865,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 72,
         images: [
-          "@assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg"
+          "/attached_assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_b796da0b.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_e97421f4.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -880,11 +880,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 91,
         images: [
-          "@assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
-          "@assets/stock_images/muslim_woman_wearing_f39c5f81.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
-          "@assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg"
+          "/attached_assets/stock_images/muslim_woman_wearing_a97b994f.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_f39c5f81.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_14ba2a54.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__1e029f9a.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_9f43fb6a.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -895,11 +895,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 64,
         images: [
-          "@assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
-          "@assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg"
+          "/attached_assets/stock_images/burgundy_velvet_abay_dad8b0d4.jpg",
+          "/attached_assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -910,11 +910,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 69,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg",
-          "@assets/stock_images/islamic_abaya_dress__50592685.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_00cebc1e.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_0b4cf2c1.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__50592685.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -925,11 +925,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 52,
         images: [
-          "@assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
-          "@assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
-          "@assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
-          "@assets/stock_images/islamic_abaya_dress__98675945.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg"
+          "/attached_assets/stock_images/black_abaya_gold_emb_bdde15ea.jpg",
+          "/attached_assets/stock_images/black_abaya_gold_emb_d72e0670.jpg",
+          "/attached_assets/stock_images/elegant_black_abaya__ee0b9296.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__98675945.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -940,11 +940,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 75,
         images: [
-          "@assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
-          "@assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
-          "@assets/stock_images/muslim_woman_wearing_4dff5032.jpg",
-          "@assets/stock_images/hijab_scarf_collecti_7b95575d.jpg"
+          "/attached_assets/stock_images/pink_lace_abaya_dres_56b3cb26.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a89c51a3.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_2627c21c.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_4dff5032.jpg",
+          "/attached_assets/stock_images/hijab_scarf_collecti_7b95575d.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -955,11 +955,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 43,
         images: [
-          "@assets/stock_images/emerald_green_satin__71f2fadb.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_307924af.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
-          "@assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
-          "@assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg"
+          "/attached_assets/stock_images/emerald_green_satin__71f2fadb.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_307924af.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a7d5dff4.jpg",
+          "/attached_assets/stock_images/navy_blue_modest_dre_36973ac5.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__a5cb2e45.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       },
@@ -970,11 +970,11 @@ async function seed() {
         categoryId: footwearCat.id,
         stock: 79,
         images: [
-          "@assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
-          "@assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
-          "@assets/stock_images/islamic_abaya_dress__333b8784.jpg",
-          "@assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
-          "@assets/stock_images/islamic_abaya_dress__860c9bb0.jpg"
+          "/attached_assets/stock_images/islamic_abaya_dress__2afdf9c3.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_55eae44d.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__333b8784.jpg",
+          "/attached_assets/stock_images/muslim_woman_wearing_5f75c5b7.jpg",
+          "/attached_assets/stock_images/islamic_abaya_dress__860c9bb0.jpg"
         ],
         video: "https://res.cloudinary.com/demo/video/upload/v1/footwear_demo.mp4"
       }
@@ -1005,6 +1005,7 @@ async function seed() {
         title: "New Modest Fashion Collection",
         subtitle: "Discover elegant hijabs and abayas",
         image: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=3840&q=90",
+        ctaText: "Shop Now",
         ctaLink: "/products",
         displayOrder: 1,
         isActive: true
@@ -1013,6 +1014,7 @@ async function seed() {
         title: "Premium Electronics Sale",
         subtitle: "Up to 30% off latest gadgets",
         image: "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?w=3840&q=90",
+        ctaText: "View Deals",
         ctaLink: "/products",
         displayOrder: 2,
         isActive: true

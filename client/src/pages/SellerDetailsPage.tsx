@@ -94,7 +94,7 @@ export default function SellerDetailsPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "delivered":
-        return "bg-green-500";
+        return "bg-primary";
       case "delivering":
         return "bg-blue-500";
       case "processing":
@@ -109,7 +109,7 @@ export default function SellerDetailsPage() {
   const getPaymentStatusColor = (status: string) => {
     switch (status) {
       case "completed":
-        return "bg-green-500";
+        return "bg-primary";
       case "processing":
         return "bg-blue-500";
       case "failed":
@@ -238,7 +238,7 @@ export default function SellerDetailsPage() {
                             </div>
                             <div>
                               <p className="text-muted-foreground">Order Total</p>
-                              <p className="font-medium text-green-600">
+                              <p className="font-medium text-primary">
                                 {formatPrice(parseFloat(order.total || "0"))}
                               </p>
                             </div>
@@ -296,19 +296,19 @@ export default function SellerDetailsPage() {
                   <CardContent className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Total Revenue</span>
-                      <span className="font-bold text-lg text-green-600">
+                      <span className="font-bold text-lg text-primary">
                         {formatPrice(analytics.totalRevenue)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Total Paid</span>
-                      <span className="font-bold text-lg text-green-600">
+                      <span className="font-bold text-lg text-primary">
                         {formatPrice(analytics.totalPaid)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Revenue This Month</span>
-                      <span className="font-bold text-lg text-green-600">
+                      <span className="font-bold text-lg text-primary">
                         {formatPrice(analytics.revenueThisMonth)}
                       </span>
                     </div>

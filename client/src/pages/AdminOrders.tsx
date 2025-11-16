@@ -156,7 +156,7 @@ function ViewOrderDialog({
               </div>
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Payment Status</p>
-                <Badge className={orderDetails.paymentStatus === "completed" ? "bg-green-500" : "bg-yellow-500"}>
+                <Badge className={orderDetails.paymentStatus === "completed" ? "bg-primary text-primary-foreground" : "bg-yellow-500"}>
                   {orderDetails.paymentStatus}
                 </Badge>
               </div>
@@ -300,7 +300,7 @@ export default function AdminOrders() {
       case "pending": return "bg-yellow-500";
       case "processing": return "bg-blue-500";
       case "delivering": return "bg-purple-500";
-      case "delivered": return "bg-green-500";
+      case "delivered": return "bg-primary text-primary-foreground";
       case "cancelled": return "bg-red-500";
       default: return "bg-gray-500";
     }
