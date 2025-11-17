@@ -18,7 +18,7 @@ import {
   type SellerPayout, type InsertSellerPayout,
   type OrderStatusHistory, type InsertOrderStatusHistory
 } from "@shared/schema";
-import { eq, and, desc, sql, lte, gte, or, isNull } from "drizzle-orm";
+import { eq, and, desc, sql, lte, gte, or, isNull, inArray } from "drizzle-orm";
 
 export interface IStorage {
   // User operations
@@ -48,7 +48,7 @@ export interface IStorage {
   getOrderStatusHistory(orderId: string): Promise<OrderStatusHistory[]>;
   updateOrder(orderId: string, data: Partial<Order>): Promise<Order | undefined>;
   assignRider(orderId: string, riderId: string): Promise<Order | undefined>;
-  getAvailableRidersWithOrderCounts(): Promise<Array<{ rider: User; activeOrderCount: number }>>;
+  getAvailableRidersWithOrderCounts(): Promise<Array<{ rider: User; activeOrderCount: number; latestLocation?: { latitude: number; longitude: number; speed?: number; heading?: number; orderId?: string; timestamp: Date } }>>;
   
   // Delivery Zone operations
   createDeliveryZone(zone: InsertDeliveryZone): Promise<DeliveryZone>;
@@ -196,12 +196,12 @@ export interface IStorage {
 export class DbStorage implements IStorage {
   // User operations
   async getUser(id: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
+    const result = await db.select().from(users).where(and(eq(users.id, id), isNull(users.deletedAt))).limit(1);
     return result[0];
   }
 
   async getUserByEmail(email: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.email, email)).limit(1);
+    const result = await db.select().from(users).where(and(eq(users.email, email), isNull(users.deletedAt))).limit(1);
     return result[0];
   }
 
@@ -216,12 +216,12 @@ export class DbStorage implements IStorage {
   }
 
   async deleteUser(id: string): Promise<boolean> {
-    const result = await db.delete(users).where(eq(users.id, id)).returning();
+    const result = await db.update(users).set({ deletedAt: new Date() }).where(eq(users.id, id)).returning();
     return result.length > 0;
   }
 
   async getUsersByRole(role: string): Promise<User[]> {
-    return db.select().from(users).where(eq(users.role, role as any));
+    return db.select().from(users).where(and(eq(users.role, role as any), isNull(users.deletedAt)));
   }
 
   // Product operations
@@ -231,21 +231,21 @@ export class DbStorage implements IStorage {
   }
 
   async getProduct(id: string): Promise<Product | undefined> {
-    const result = await db.select().from(products).where(eq(products.id, id)).limit(1);
+    const result = await db.select().from(products).where(and(eq(products.id, id), isNull(products.deletedAt))).limit(1);
     return result[0];
   }
 
   async getProducts(filters?: { sellerId?: string; category?: string; isActive?: boolean }): Promise<Product[]> {
-    let query = db.select().from(products);
+    const conditions = [isNull(products.deletedAt)];
     
     if (filters?.sellerId) {
-      query = query.where(eq(products.sellerId, filters.sellerId)) as any;
+      conditions.push(eq(products.sellerId, filters.sellerId));
     }
     if (filters?.isActive !== undefined) {
-      query = query.where(eq(products.isActive, filters.isActive)) as any;
+      conditions.push(eq(products.isActive, filters.isActive));
     }
     
-    return query.orderBy(desc(products.createdAt));
+    return db.select().from(products).where(and(...conditions)).orderBy(desc(products.createdAt));
   }
 
   async updateProduct(id: string, data: Partial<Product>): Promise<Product | undefined> {
@@ -254,7 +254,7 @@ export class DbStorage implements IStorage {
   }
 
   async deleteProduct(id: string): Promise<boolean> {
-    const result = await db.delete(products).where(eq(products.id, id));
+    const result = await db.update(products).set({ deletedAt: new Date() }).where(eq(products.id, id));
     return true;
   }
 
@@ -504,47 +504,72 @@ export class DbStorage implements IStorage {
   }
 
   async assignRider(orderId: string, riderId: string): Promise<Order | undefined> {
+    // Assign rider and immediately move into 'delivering' to activate dashboards
     const result = await db.update(orders).set({ 
       riderId,
-      status: "processing",
+      status: "delivering",
       updatedAt: new Date()
     }).where(eq(orders.id, orderId)).returning();
     return result[0];
   }
 
-  async getAvailableRidersWithOrderCounts(): Promise<Array<{ rider: User; activeOrderCount: number }>> {
-    const allRiders = await db.select().from(users)
-      .where(
-        and(
-          eq(users.role, 'rider'),
-          eq(users.isApproved, true),
-          eq(users.isActive, true)
-        )
-      );
+  async getAvailableRidersWithOrderCounts(): Promise<Array<{ rider: User; activeOrderCount: number; latestLocation?: { latitude: number; longitude: number; speed?: number; heading?: number; orderId?: string; timestamp: Date } }>> {
+    // Fetch all approved + active riders
+    const allRiders = await db.select().from(users).where(and(
+      eq(users.role, 'rider'),
+      eq(users.isApproved, true),
+      eq(users.isActive, true)
+    ));
 
-    const ridersWithCounts = await Promise.all(
-      allRiders.map(async (rider) => {
-        const activeOrders = await db.select()
-          .from(orders)
-          .where(
-            and(
-              eq(orders.riderId, rider.id),
-              or(
-                eq(orders.status, 'processing'),
-                eq(orders.status, 'delivering')
-              )
-            )
-          );
-        
-        return {
-          rider,
-          activeOrderCount: activeOrders.length
-        };
-      })
-    );
+    if (allRiders.length === 0) {
+      return [];
+    }
 
-    return ridersWithCounts.filter(r => r.activeOrderCount < 10)
-      .sort((a, b) => a.activeOrderCount - b.activeOrderCount);
+    // Pre-fetch order counts in one query for efficiency
+    const riderIds = allRiders.map(r => r.id);
+    const activeOrders = await db.select().from(orders).where(and(
+      inArray(orders.riderId, riderIds),
+      or(eq(orders.status, 'processing'), eq(orders.status, 'delivering'))
+    ));
+
+    const countsByRider: Record<string, number> = {};
+    for (const o of activeOrders) {
+      if (o.riderId) {
+        countsByRider[o.riderId] = (countsByRider[o.riderId] || 0) + 1;
+      }
+    }
+
+    // Fetch latest tracking entries per rider (single pass)
+    const trackingEntries = await db.select().from(deliveryTracking)
+      .where(inArray(deliveryTracking.riderId, riderIds))
+      .orderBy(desc(deliveryTracking.timestamp));
+
+    const latestLocationByRider: Record<string, typeof trackingEntries[number]> = {};
+    for (const entry of trackingEntries) {
+      // First encountered (sorted desc) is latest
+      if (!latestLocationByRider[entry.riderId]) {
+        latestLocationByRider[entry.riderId] = entry;
+      }
+    }
+
+    const ridersWithEnrichment = allRiders.map(rider => {
+      const tracking = latestLocationByRider[rider.id];
+      return {
+        rider,
+        activeOrderCount: countsByRider[rider.id] || 0,
+        latestLocation: tracking ? {
+          latitude: parseFloat(tracking.latitude as any),
+            longitude: parseFloat(tracking.longitude as any),
+            speed: tracking.speed ? parseFloat(tracking.speed as any) : undefined,
+            heading: tracking.heading ? parseFloat(tracking.heading as any) : undefined,
+            orderId: tracking.orderId,
+            timestamp: tracking.timestamp!
+        } : undefined
+      };
+    });
+
+    // Return all riders (even those at capacity) sorted by workload ascending
+    return ridersWithEnrichment.sort((a, b) => a.activeOrderCount - b.activeOrderCount);
   }
 
   // Delivery Zone operations
@@ -1719,14 +1744,13 @@ export class DbStorage implements IStorage {
   }
 
   async getStore(id: string): Promise<Store | undefined> {
-    const result = await db.select().from(stores).where(eq(stores.id, id)).limit(1);
+    const result = await db.select().from(stores).where(and(eq(stores.id, id), isNull(stores.deletedAt))).limit(1);
     return result[0];
   }
 
   async getStores(filters?: { isActive?: boolean; isApproved?: boolean }): Promise<Store[]> {
-    let query = db.select().from(stores);
+    const conditions = [isNull(stores.deletedAt)];
     
-    const conditions = [];
     if (filters?.isActive !== undefined) {
       conditions.push(eq(stores.isActive, filters.isActive));
     }
@@ -1734,17 +1758,13 @@ export class DbStorage implements IStorage {
       conditions.push(eq(stores.isApproved, filters.isApproved));
     }
 
-    if (conditions.length > 0) {
-      query = query.where(and(...conditions)) as any;
-    }
-
-    return query.orderBy(desc(stores.createdAt));
+    return db.select().from(stores).where(and(...conditions)).orderBy(desc(stores.createdAt));
   }
 
   async getStoreByPrimarySeller(sellerId: string): Promise<Store | undefined> {
     const result = await db.select()
       .from(stores)
-      .where(eq(stores.primarySellerId, sellerId))
+      .where(and(eq(stores.primarySellerId, sellerId), isNull(stores.deletedAt)))
       .limit(1);
     return result[0];
   }
@@ -1758,7 +1778,7 @@ export class DbStorage implements IStorage {
   }
 
   async deleteStore(id: string): Promise<boolean> {
-    const result = await db.delete(stores).where(eq(stores.id, id));
+    const result = await db.update(stores).set({ deletedAt: new Date() }).where(eq(stores.id, id));
     return result.rowCount !== null && result.rowCount > 0;
   }
 

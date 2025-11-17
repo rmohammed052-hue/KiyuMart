@@ -22,6 +22,7 @@ import {
   AlertCircle
 } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
+import { getStatusClasses } from "@/../../shared/status-colors";
 
 interface SupportConversation {
   id: string;
@@ -167,14 +168,7 @@ export default function CustomerSupport() {
 
   const selectedConv = conversations.find(c => c.id === selectedConversation);
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "open": return "bg-yellow-500";
-      case "assigned": return "bg-blue-500";
-      case "resolved": return "bg-primary";
-      default: return "bg-gray-500";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   if (!isAuthenticated || authLoading) {
     return null;
@@ -284,7 +278,7 @@ export default function CustomerSupport() {
                               <p className="text-xs text-muted-foreground">{conv.customerName}</p>
                             )}
                           </div>
-                          <Badge className={`${getStatusColor(conv.status)} text-white ml-2`}>
+                          <Badge className={getStatusClasses(conv.status, 'approval', 'light') + ' border ml-2'}>
                             {conv.status}
                           </Badge>
                         </div>
@@ -309,7 +303,7 @@ export default function CustomerSupport() {
                       <div>
                         <CardTitle className="flex items-center gap-2">
                           {selectedConv.subject}
-                          <Badge className={`${getStatusColor(selectedConv.status)} text-white`}>
+                          <Badge className={getStatusClasses(selectedConv.status, 'approval', 'light') + ' border'}>
                             {selectedConv.status}
                           </Badge>
                         </CardTitle>

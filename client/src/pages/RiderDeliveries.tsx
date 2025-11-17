@@ -10,6 +10,7 @@ import { Loader2, Package, MapPin, CheckCircle } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { getOrderStatusColor } from "../../../shared/status-colors";
 
 interface Delivery {
   id: string;
@@ -53,16 +54,7 @@ export default function RiderDeliveries() {
     ? deliveries 
     : deliveries.filter(d => d.status === statusFilter);
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "pending": return "bg-yellow-500";
-      case "assigned": return "bg-blue-500";
-      case "picked_up": return "bg-purple-500";
-      case "in_transit": return "bg-orange-500";
-      case "delivered": return "bg-primary";
-      default: return "bg-gray-500";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   return (
     <DashboardLayout role="rider">
@@ -113,9 +105,9 @@ export default function RiderDeliveries() {
                         <p className="text-sm text-muted-foreground">{delivery.customerName}</p>
                       </div>
                     </div>
-                    <Badge className={`${getStatusColor(delivery.status)} text-white`}>
-                      {delivery.status.replace("_", " ")}
-                    </Badge>
+                                        <div className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold border ${getOrderStatusColor(delivery.status, 'light')}`}>
+                      {delivery.status}
+                    </div>
                   </div>
 
                   <div className="space-y-2 text-sm">

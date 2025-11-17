@@ -1,9 +1,26 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
+const TIMEOUT_MS = 30000; // 30s default timeout
+let csrfToken: string | null = null;
+
+async function getCsrfToken(): Promise<string> {
+  if (csrfToken) return csrfToken;
+  const res = await fetch('/api/csrf-token', { credentials: 'include' });
+  if (!res.ok) throw new Error('Failed to obtain CSRF token');
+  const data = await res.json();
+  csrfToken = data.token;
+  return csrfToken!;
+}
+
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
     const text = (await res.text()) || res.statusText;
-    throw new Error(`${res.status}: ${text}`);
+    try {
+      const json = JSON.parse(text);
+      throw json; // throw structured JSON error if available
+    } catch {
+      throw { error: `${res.status}: ${text}` };
+    }
   }
 }
 
@@ -12,11 +29,29 @@ export async function apiRequest(
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+  const headers: Record<string, string> = {};
+  if (data) headers["Content-Type"] = "application/json";
+
+  // Attach CSRF token for mutating requests
+  const upper = method.toUpperCase();
+  if (["POST", "PATCH", "PUT", "DELETE"].includes(upper)) {
+    headers["X-CSRF-Token"] = await getCsrfToken();
+  }
+
   const res = await fetch(url, {
     method,
-    headers: data ? { "Content-Type": "application/json" } : {},
+    headers,
     body: data ? JSON.stringify(data) : undefined,
     credentials: "include",
+    signal: controller.signal,
+  }).catch((err) => {
+    if (err?.name === 'AbortError') {
+      throw { error: `Request timeout after ${TIMEOUT_MS}ms` };
+    }
+    throw err;
   });
 
   await throwIfResNotOk(res);

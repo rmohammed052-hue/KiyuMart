@@ -3,6 +3,27 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  safelist: [
+    // Order Status Colors
+    'bg-amber-50', 'text-amber-700', 'border-amber-200', 'dark:bg-amber-950/30', 'dark:text-amber-400', 'dark:border-amber-800', 'bg-amber-500', 'bg-amber-600',
+    'bg-sky-50', 'text-sky-700', 'border-sky-200', 'dark:bg-sky-950/30', 'dark:text-sky-400', 'dark:border-sky-800', 'bg-sky-500',
+    'bg-violet-50', 'text-violet-700', 'border-violet-200', 'dark:bg-violet-950/30', 'dark:text-violet-400', 'dark:border-violet-800', 'bg-violet-500',
+    'bg-emerald-50', 'text-emerald-700', 'border-emerald-200', 'dark:bg-emerald-950/30', 'dark:text-emerald-400', 'dark:border-emerald-800', 'bg-emerald-500', 'bg-emerald-600',
+    'bg-rose-50', 'text-rose-700', 'border-rose-200', 'dark:bg-rose-950/30', 'dark:text-rose-400', 'dark:border-rose-800', 'bg-rose-500',
+    'bg-orange-50', 'text-orange-700', 'border-orange-200', 'dark:bg-orange-950/30', 'dark:text-orange-400', 'dark:border-orange-800', 'bg-orange-500',
+    'bg-indigo-50', 'text-indigo-700', 'border-indigo-200', 'dark:bg-indigo-950/30', 'dark:text-indigo-400', 'dark:border-indigo-800', 'bg-indigo-500',
+    // User Role Colors
+    'bg-slate-50', 'text-slate-700', 'border-slate-300', 'dark:bg-slate-900/50', 'dark:text-slate-300', 'dark:border-slate-700', 'bg-slate-700',
+    'bg-purple-50', 'text-purple-700', 'border-purple-200', 'dark:bg-purple-950/30', 'dark:text-purple-400', 'dark:border-purple-800', 'bg-purple-500', 'bg-purple-600',
+    'bg-blue-50', 'text-blue-700', 'border-blue-200', 'dark:bg-blue-950/30', 'dark:text-blue-400', 'dark:border-blue-800', 'bg-blue-500', 'bg-blue-600',
+    'bg-teal-50', 'text-teal-700', 'border-teal-200', 'dark:bg-teal-950/30', 'dark:text-teal-400', 'dark:border-teal-800', 'bg-teal-600',
+    'bg-pink-50', 'text-pink-700', 'border-pink-200', 'dark:bg-pink-950/30', 'dark:text-pink-400', 'dark:border-pink-800', 'bg-pink-600',
+    // Payment & Other Status Colors
+    'bg-gray-50', 'text-gray-700', 'border-gray-200', 'dark:bg-gray-900/50', 'dark:text-gray-400', 'dark:border-gray-700', 'bg-gray-500',
+    'bg-green-50', 'text-green-700', 'border-green-200', 'dark:bg-green-950/30', 'dark:text-green-400', 'dark:border-green-800', 'bg-green-600',
+    'bg-red-50', 'text-red-700', 'border-red-200', 'dark:bg-red-950/30', 'dark:text-red-400', 'dark:border-red-800', 'bg-red-500',
+    'text-white',
+  ],
   theme: {
     extend: {
       borderRadius: {

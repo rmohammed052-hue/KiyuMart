@@ -1,6 +1,7 @@
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/lib/auth";
@@ -21,6 +22,7 @@ import AgentTickets from "@/pages/AgentTickets";
 import AgentCustomers from "@/pages/AgentCustomers";
 import AgentNotifications from "@/pages/AgentNotifications";
 import ChatPage from "@/pages/ChatPageConnected";
+import ColorSystemTest from "@/pages/ColorSystemTest";
 import OrderTracking from "@/pages/OrderTracking";
 import LiveTracking from "@/pages/LiveTracking";
 import Checkout from "@/pages/CheckoutConnected";
@@ -121,6 +123,7 @@ function Router() {
       <Route path="/support" component={CustomerSupport} />
       <Route path="/become-seller" component={BecomeSellerPage} />
       <Route path="/become-rider" component={BecomeRiderPage} />
+      <Route path="/color-test" component={ColorSystemTest} />
       <Route path="/admin" component={AdminDashboard} />
       <Route path="/admin/stores" component={AdminStoresList} />
       <Route path="/admin/store" component={AdminStoreManager} />
@@ -186,18 +189,20 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <AuthProvider>
-          <NotificationProvider>
-            <TooltipProvider>
-              <Toaster />
-              <Router />
-            </TooltipProvider>
-          </NotificationProvider>
-        </AuthProvider>
-      </LanguageProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <LanguageProvider>
+          <AuthProvider>
+            <NotificationProvider>
+              <TooltipProvider>
+                <Toaster />
+                <Router />
+              </TooltipProvider>
+            </NotificationProvider>
+          </AuthProvider>
+        </LanguageProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 

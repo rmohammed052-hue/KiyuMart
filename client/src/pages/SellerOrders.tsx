@@ -36,16 +36,7 @@ export default function SellerOrders() {
     order.orderNumber.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "pending": return "bg-yellow-500";
-      case "processing": return "bg-blue-500";
-      case "shipped": return "bg-purple-500";
-      case "delivered": return "bg-primary text-primary-foreground";
-      case "cancelled": return "bg-red-500";
-      default: return "bg-gray-500";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   return (
     <DashboardLayout role="seller">
@@ -122,9 +113,9 @@ export default function SellerOrders() {
                           {new Date(order.createdAt).toLocaleDateString()}
                         </p>
                       </div>
-                      <Badge className={`${getStatusColor(order.status)} text-white`}>
+                      <div className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold border ${getOrderStatusColor(order.status, 'light')}`}>
                         {order.status}
-                      </Badge>
+                      </div>
                       <Badge variant={order.paymentStatus === "paid" ? "default" : "outline"}>
                         {order.paymentStatus}
                       </Badge>

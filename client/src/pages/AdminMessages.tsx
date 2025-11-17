@@ -19,6 +19,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { useGroupCall } from "@/hooks/useGroupCall";
 import { ParticipantSelectorDialog } from "@/components/ParticipantSelectorDialog";
 import { GroupCallDialog } from "@/components/GroupCallDialog";
+import { getRoleColor } from "@/../../shared/status-colors";
 
 interface UserData {
   id: string;
@@ -419,16 +420,7 @@ export default function AdminMessages() {
     });
   };
 
-  const getRoleBadgeColor = (role: string) => {
-    switch(role.toLowerCase()) {
-      case "admin": return "bg-purple-500 text-white";
-      case "seller": return "bg-blue-500 text-white";
-      case "buyer": return "bg-primary text-white";
-      case "rider": return "bg-orange-500 text-white";
-      case "agent": return "bg-pink-500 text-white";
-      default: return "bg-gray-500 text-white";
-    }
-  };
+  // Role colors now imported from shared/status-colors.ts
 
   const filterUsersByRole = (users: UserData[], role: string) => {
     if (role === "all") return users;
@@ -554,9 +546,9 @@ export default function AdminMessages() {
                         <p className="font-medium text-sm line-clamp-1">{userData.name || userData.username}</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge className={getRoleBadgeColor(userData.role)} data-testid={`badge-role-${userData.id}`}>
+                        <div className={`inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold border-transparent ${getRoleColor(userData.role, 'solid')}`} data-testid={`badge-role-${userData.id}`}>
                           {userData.role}
-                        </Badge>
+                        </div>
                         <span className="text-xs text-muted-foreground truncate">{userData.email}</span>
                       </div>
                     </div>

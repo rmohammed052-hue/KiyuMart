@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import { storage } from "./storage";
 import { db } from "../db";
 import { users, cart, wishlist, chatMessages, notifications, orders, products, stores } from "@shared/schema";
-import { eq, or, isNotNull, and, desc } from "drizzle-orm";
+import { eq, or, isNotNull, and, desc, sql } from "drizzle-orm";
 import { 
   hashPassword, 
   comparePassword, 
@@ -21,6 +21,7 @@ import multer from "multer";
 import sharp from "sharp";
 import { insertUserSchema, insertProductSchema, insertDeliveryZoneSchema, insertOrderSchema, insertWishlistSchema, insertReviewSchema, insertRiderReviewSchema, insertBannerCollectionSchema, insertMarketplaceBannerSchema, insertFooterPageSchema, vehicleInfoSchema, type User } from "@shared/schema";
 import { getStoreTypeSchema, type StoreType, STORE_TYPES } from "@shared/storeTypes";
+import { logAudit, ensureWebhookEvent, markWebhookProcessed } from "./audit";
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -31,6 +32,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
       origin: "*",
       methods: ["GET", "POST"]
     }
+  });
+
+  // ============ Health Check ============
+  app.get("/api/health", async (_req, res) => {
+    const health: any = {
+      status: "ok",
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      checks: {
+        database: "unknown",
+        socketio: "unknown",
+      },
+    };
+
+    try {
+      await storage.getPlatformSettings();
+      health.checks.database = "healthy";
+    } catch {
+      health.checks.database = "unhealthy";
+      health.status = "degraded";
+    }
+
+    health.checks.socketio = io.engine.clientsCount >= 0 ? "healthy" : "unhealthy";
+    res.status(health.status === "ok" ? 200 : 503).json(health);
   });
 
   // ============ Socket.IO Authentication Middleware ============
@@ -137,13 +162,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/auth/login", async (req, res) => {
     try {
       const { email, password } = req.body;
+      const normalizedEmail = String(email || '').trim().toLowerCase();
+      console.log("[LOGIN DEBUG] Email:", normalizedEmail, "Password length:", password?.length);
+      if (!normalizedEmail || !password) {
+        return res.status(400).json({ error: "Email and password are required" });
+      }
       
-      const user = await storage.getUserByEmail(email);
+      const user = await storage.getUserByEmail(normalizedEmail);
       if (!user) {
+        console.log("[LOGIN DEBUG] User not found for email:", normalizedEmail);
         return res.status(401).json({ error: "Invalid credentials" });
       }
+      console.log("[LOGIN DEBUG] User found:", user.email, "Role:", user.role);
 
       const isValidPassword = await comparePassword(password, user.password);
+      console.log("[LOGIN DEBUG] Password valid:", isValidPassword);
       if (!isValidPassword) {
         return res.status(401).json({ error: "Invalid credentials" });
       }
@@ -615,6 +648,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       
       const { password, ...userWithoutPassword } = approvedUser;
+      await logAudit('user.approve', req.user!.id, { approvedUserId: approvedUser.id, role: approvedUser.role });
       res.json(userWithoutPassword);
     } catch (error: any) {
       res.status(400).json({ error: error.message });
@@ -660,6 +694,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       console.log(`User ${user.id} (${user.role}) pending application rejected by admin`);
       const { password, ...userWithoutPassword } = rejectedUser;
+      await logAudit('user.reject', req.user!.id, { rejectedUserId: rejectedUser.id, role: rejectedUser.role, reason }, { type: 'user', id: rejectedUser.id });
       res.json(userWithoutPassword);
     } catch (error: any) {
       console.error("Error rejecting user application:", error);
@@ -698,6 +733,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ error: "User not found" });
       }
       const { password, ...userWithoutPassword } = updatedUser;
+      await logAudit('user.status.change', req.user!.id, { targetUserId: updatedUser.id, isActive }, { type: 'user', id: updatedUser.id });
       res.json(userWithoutPassword);
     } catch (error: any) {
       console.error("Error updating user status:", error);
@@ -1217,11 +1253,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/products", async (req, res) => {
     try {
       const { sellerId, category, isActive } = req.query;
-      
-      // Get platform settings to check for single-store mode
+      const page = req.query.page ? parseInt(req.query.page as string) : 1;
+      const pageSize = req.query.pageSize ? Math.min(parseInt(req.query.pageSize as string), 100) : 20;
+      const offset = (page - 1) * pageSize;
+
       const platformSettings = await storage.getPlatformSettings();
-      
-      // In single-store mode with a primary store set, filter by that store's seller
+
       let finalSellerId: string | undefined = sellerId as string;
       if (!platformSettings.isMultiVendor && platformSettings.primaryStoreId && !sellerId) {
         const primaryStore = await storage.getStore(platformSettings.primaryStoreId);
@@ -1229,13 +1266,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
           finalSellerId = primaryStore.primarySellerId || undefined;
         }
       }
-      
-      const products = await storage.getProducts({
-        sellerId: finalSellerId,
-        category: category as string,
-        isActive: isActive === "true" ? true : isActive === "false" ? false : undefined,
-      });
-      res.json(products);
+
+      const conditions = [] as any[];
+      if (finalSellerId) conditions.push(eq(products.sellerId, finalSellerId));
+      if (isActive === "true") conditions.push(eq(products.isActive, true));
+      if (isActive === "false") conditions.push(eq(products.isActive, false));
+      if (category) conditions.push(eq(products.category, category as string));
+
+      const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+      const countResult = await db
+        .select({ count: sql<number>`count(*)::int` })
+        .from(products)
+        .where(whereClause as any);
+      const total = countResult[0]?.count || 0;
+
+      const items = await db
+        .select()
+        .from(products)
+        .where(whereClause as any)
+        .orderBy(desc(products.createdAt))
+        .limit(pageSize)
+        .offset(offset);
+
+      res.setHeader("X-Total-Count", total.toString());
+      res.setHeader("X-Page", page.toString());
+      res.setHeader("X-Page-Size", pageSize.toString());
+      res.setHeader("X-Total-Pages", Math.max(1, Math.ceil(total / pageSize)).toString());
+      res.json(items);
     } catch (error: any) {
       res.status(400).json({ error: error.message });
     }
@@ -2637,32 +2695,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/orders", requireAuth, async (req: AuthRequest, res) => {
     try {
       const userRole = req.user!.role as "admin" | "super_admin" | "buyer" | "seller" | "rider" | "agent";
-      // Allow context override: buyers can shop, sellers/riders/agents can view purchases vs their work orders
       const context = (req.query.context as string) || userRole;
+      const page = req.query.page ? parseInt(req.query.page as string) : 1;
+      const pageSize = req.query.pageSize ? Math.min(parseInt(req.query.pageSize as string), 100) : 20;
+      const offset = (page - 1) * pageSize;
       
       let orders: any[];
+      let total = 0;
       
-      // Admin and super_admin see all orders by default, unless context=buyer is specified
       if ((userRole === "admin" || userRole === "super_admin") && (context === "admin" || context === "super_admin")) {
-        orders = await storage.getAllOrders();
+        const countResult = await db.select({ count: sql<number>`count(*)::int` }).from(orders);
+        total = countResult[0]?.count || 0;
+        orders = await db.select().from(orders).orderBy(desc(orders.createdAt)).limit(pageSize).offset(offset);
       } else {
-        // For all other cases, use context-based filtering
         const filterRole = context as "buyer" | "seller" | "rider";
-        orders = await storage.getOrdersByUser(req.user!.id, filterRole);
+        const column = filterRole === "buyer" ? orders.buyerId : filterRole === "seller" ? orders.sellerId : orders.riderId;
+        const countResult = await db.select({ count: sql<number>`count(*)::int` }).from(orders).where(eq(column, req.user!.id));
+        total = countResult[0]?.count || 0;
+        orders = await db.select().from(orders).where(eq(column, req.user!.id)).orderBy(desc(orders.createdAt)).limit(pageSize).offset(offset);
       }
       
-      // Fetch order items with product names for each order
       const ordersWithItems = await Promise.all(
         orders.map(async (order) => {
           const items = await storage.getOrderItems(order.id);
-          return {
-            ...order,
-            totalAmount: order.total,
-            items,
-          };
+          return { ...order, totalAmount: order.total, items };
         })
       );
       
+      res.setHeader("X-Total-Count", total.toString());
+      res.setHeader("X-Page", page.toString());
+      res.setHeader("X-Page-Size", pageSize.toString());
+      res.setHeader("X-Total-Pages", Math.max(1, Math.ceil(total / pageSize)).toString());
       res.json(ordersWithItems);
     } catch (error: any) {
       res.status(400).json({ error: error.message });
@@ -2788,20 +2851,42 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // ============ Delivery Tracking Routes ============
   app.post("/api/delivery-tracking", requireAuth, requireRole("rider"), async (req: AuthRequest, res) => {
     try {
+      const { orderId, latitude, longitude, accuracy, speed, heading } = req.body;
+
+      // Basic coordinate validation (ensure they exist and are valid numbers)
+      if (typeof latitude !== 'number' || typeof longitude !== 'number' || 
+          isNaN(latitude) || isNaN(longitude) ||
+          latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180) {
+        return res.status(400).json({ 
+          error: "Invalid coordinates: Latitude must be between -90 and 90, longitude between -180 and 180" 
+        });
+      }
+
+      // FREQUENCY THROTTLE: Prevent spam updates (max 1 per second per order)
+      const recentTracking = await storage.getLatestDeliveryLocation(orderId);
+      if (recentTracking) {
+        const timeSinceLastUpdate = Date.now() - new Date(recentTracking.timestamp).getTime();
+        if (timeSinceLastUpdate < 1000) {
+          return res.status(429).json({ 
+            error: "Rate limit exceeded: Updates allowed once per second" 
+          });
+        }
+      }
+
       const trackingData = {
-        orderId: req.body.orderId,
+        orderId,
         riderId: req.user!.id,
-        latitude: req.body.latitude,
-        longitude: req.body.longitude,
-        accuracy: req.body.accuracy,
-        speed: req.body.speed,
-        heading: req.body.heading,
+        latitude,
+        longitude,
+        accuracy,
+        speed,
+        heading,
       };
 
       const tracking = await storage.createDeliveryTracking(trackingData);
       
       // Emit real-time location update to buyer and admins
-      const order = await storage.getOrder(req.body.orderId);
+      const order = await storage.getOrder(orderId);
       if (order) {
         const rider = await storage.getUser(req.user!.id);
         const locationUpdate = {
@@ -3143,10 +3228,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/settings", async (req, res) => {
     try {
       const settings = await storage.getPlatformSettings();
-      // Mask sensitive credentials in the response
+      // Remove sensitive credentials in the response
+      const { paystackSecretKey, cloudinaryApiSecret, cloudinaryApiKey, ...rest } = settings as any;
       const sanitizedSettings = {
-        ...settings,
-        cloudinaryApiSecret: settings.cloudinaryApiSecret ? "••••••••••••••••" : "",
+        ...rest,
       };
       res.json(sanitizedSettings);
     } catch (error: any) {
@@ -3158,10 +3243,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/platform-settings", async (req, res) => {
     try {
       const settings = await storage.getPlatformSettings();
-      // Mask sensitive credentials in the response
+      // Remove sensitive credentials in the response
+      const { paystackSecretKey, cloudinaryApiSecret, cloudinaryApiKey, ...rest } = settings as any;
       const sanitizedSettings = {
-        ...settings,
-        cloudinaryApiSecret: settings.cloudinaryApiSecret ? "••••••••••••••••" : "",
+        ...rest,
       };
       res.json(sanitizedSettings);
     } catch (error: any) {
@@ -3229,6 +3314,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       }
       
+      await logAudit('platform.settings.update', req.user!.id, { diff }, { type: 'platform_settings', id: (settings as any).id });
       res.json(settings);
     } catch (error: any) {
       res.status(400).json({ error: error.message });
@@ -3282,6 +3368,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         req.user!.id
       );
       
+      await logAudit('role.features.update', req.user!.id, { role, features }, { type: 'role', id: role });
       res.json(updatedFeatures);
     } catch (error: any) {
       res.status(400).json({ error: error.message });
@@ -3915,6 +4002,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const event = req.body as any;
       console.log('[WEBHOOK] Paystack event received:', event.event);
 
+      // Idempotency guard: Ensure event_id is unique before processing
+      const { alreadyProcessed } = await ensureWebhookEvent(event.id || event.data.reference, event.data.reference, event.event, event);
+      if (alreadyProcessed) {
+        console.log('[WEBHOOK] Event already processed (idempotent):', event.id || event.data.reference);
+        return res.json({ message: "Event already processed" });
+      }
+
       // Handle different webhook events
       if (event.event === 'charge.success') {
         const { reference, metadata } = event.data;
@@ -3980,9 +4074,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
 
         console.log('[WEBHOOK] Payment processed successfully:', reference);
+        await markWebhookProcessed(event.id || event.data.reference, 'completed');
       } else if (event.event === 'charge.failed') {
         // Handle failed payment
         console.log('[WEBHOOK] Payment failed:', event.data.reference);
+        await markWebhookProcessed(event.id || event.data.reference, 'failed');
       }
 
       res.json({ status: "success" });
@@ -4146,8 +4242,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(403).json({ error: "Seller access required" });
       }
 
-      const payouts = await storage.getSellerPayouts(user.id);
-      res.json(payouts);
+      const page = req.query.page ? parseInt(req.query.page as string) : 1;
+      const pageSize = req.query.pageSize ? Math.min(parseInt(req.query.pageSize as string), 100) : 20;
+      const offset = (page - 1) * pageSize;
+
+      const countResult = await db.execute(sql`SELECT count(*)::int as count FROM seller_payouts WHERE seller_id = ${user.id}`);
+      const total = (countResult as any).rows?.[0]?.count || 0;
+
+      const payouts = await db.execute(sql`SELECT * FROM seller_payouts WHERE seller_id = ${user.id} ORDER BY created_at DESC LIMIT ${pageSize} OFFSET ${offset}`);
+
+      res.setHeader("X-Total-Count", total.toString());
+      res.setHeader("X-Page", page.toString());
+      res.setHeader("X-Page-Size", pageSize.toString());
+      res.setHeader("X-Total-Pages", Math.max(1, Math.ceil(total / pageSize)).toString());
+      res.json((payouts as any).rows || []);
     } catch (error) {
       console.error('[PAYOUTS] Error fetching seller payouts:', error);
       res.status(500).json({ error: "Failed to fetch payouts" });
@@ -4164,8 +4272,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(403).json({ error: "Admin access required" });
       }
 
-      const payouts = await storage.getAllPendingPayouts();
-      res.json(payouts);
+      const page = req.query.page ? parseInt(req.query.page as string) : 1;
+      const pageSize = req.query.pageSize ? Math.min(parseInt(req.query.pageSize as string), 100) : 20;
+      const offset = (page - 1) * pageSize;
+
+      const countResult = await db.execute(sql`SELECT count(*)::int as count FROM seller_payouts WHERE status = 'pending'`);
+      const total = (countResult as any).rows?.[0]?.count || 0;
+
+      const payouts = await db.execute(sql`SELECT * FROM seller_payouts WHERE status = 'pending' ORDER BY created_at DESC LIMIT ${pageSize} OFFSET ${offset}`);
+
+      res.setHeader("X-Total-Count", total.toString());
+      res.setHeader("X-Page", page.toString());
+      res.setHeader("X-Page-Size", pageSize.toString());
+      res.setHeader("X-Total-Pages", Math.max(1, Math.ceil(total / pageSize)).toString());
+      res.json((payouts as any).rows || []);
     } catch (error) {
       console.error('[ADMIN-PAYOUTS] Error fetching pending payouts:', error);
       res.status(500).json({ error: "Failed to fetch pending payouts" });
@@ -4194,7 +4314,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       console.log(`[ADMIN-PAYOUT] ✅ Admin ${user.email} updated payout ${id} to ${status}`);
-      
+      await logAudit('payout.status.update', user.id, { payoutId: id, status, notes }, { type: 'payout', id });
       res.json(updated);
     } catch (error) {
       console.error('[ADMIN-PAYOUT] Error processing payout:', error);
@@ -4214,6 +4334,48 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // ============ Socket.IO for Real-time Chat ============
   const userSockets = new Map<string, string>();
+  const messageRateLimits = new Map<string, number[]>();
+  const callRateLimits = new Map<string, number[]>();
+
+  function checkMessageRateLimit(userId: string): boolean {
+    const now = Date.now();
+    const window = 60 * 1000; // 1 minute
+    const maxMessages = 30;
+    
+    if (!messageRateLimits.has(userId)) {
+      messageRateLimits.set(userId, []);
+    }
+    
+    const timestamps = messageRateLimits.get(userId)!.filter(t => now - t < window);
+    
+    if (timestamps.length >= maxMessages) {
+      return false;
+    }
+    
+    timestamps.push(now);
+    messageRateLimits.set(userId, timestamps);
+    return true;
+  }
+
+  function checkCallRateLimit(userId: string): boolean {
+    const now = Date.now();
+    const window = 60 * 60 * 1000; // 1 hour
+    const maxCalls = 10;
+    
+    if (!callRateLimits.has(userId)) {
+      callRateLimits.set(userId, []);
+    }
+    
+    const timestamps = callRateLimits.get(userId)!.filter(t => now - t < window);
+    
+    if (timestamps.length >= maxCalls) {
+      return false;
+    }
+    
+    timestamps.push(now);
+    callRateLimits.set(userId, timestamps);
+    return true;
+  }
 
   // Helper function to send notifications to all admins and super_admins
   async function notifyAdmins(type: string, title: string, message: string, metadata?: Record<string, any>) {
@@ -4305,6 +4467,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       try {
         const callerId = socket.data.userId;
         const callerRole = socket.data.userRole;
+        
+        if (!checkCallRateLimit(callerId)) {
+          socket.emit("error", { message: "Call rate limit exceeded. Please try again later." });
+          return;
+        }
         
         const caller = await storage.getUser(callerId);
         if (!caller) {
@@ -4656,7 +4823,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     // Real-time message sending handler
     socket.on("new_message", async ({ receiverId, message }) => {
       try {
-        const senderId = socket.data.userId; // Authenticated user from middleware
+        const senderId = socket.data.userId;
+        
+        if (!checkMessageRateLimit(senderId)) {
+          socket.emit("error", { message: "Rate limit exceeded. Please slow down." });
+          return;
+        }
         
         if (!receiverId || !message?.trim()) {
           socket.emit("error", { message: "Receiver ID and message are required" });
@@ -5553,9 +5725,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // ============ Notification Routes ============
   app.get("/api/notifications", requireAuth, async (req: AuthRequest, res) => {
     try {
-      const limit = req.query.limit ? parseInt(req.query.limit as string) : 50;
-      const notifications = await storage.getNotificationsByUser(req.user!.id, limit);
-      res.json(notifications);
+      const page = req.query.page ? parseInt(req.query.page as string) : 1;
+      const pageSize = req.query.pageSize ? Math.min(parseInt(req.query.pageSize as string), 100) : 50;
+      const offset = (page - 1) * pageSize;
+
+      const countResult = await db.select({ count: sql<number>`count(*)::int` }).from(notifications).where(eq(notifications.userId, req.user!.id));
+      const total = countResult[0]?.count || 0;
+
+      const items = await db.select().from(notifications).where(eq(notifications.userId, req.user!.id)).orderBy(desc(notifications.createdAt)).limit(pageSize).offset(offset);
+
+      res.setHeader("X-Total-Count", total.toString());
+      res.setHeader("X-Page", page.toString());
+      res.setHeader("X-Page-Size", pageSize.toString());
+      res.setHeader("X-Total-Pages", Math.max(1, Math.ceil(total / pageSize)).toString());
+      res.json(items);
     } catch (error: any) {
       res.status(400).json({ error: error.message });
     }

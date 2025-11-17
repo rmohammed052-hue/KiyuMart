@@ -16,6 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Users, Video, Phone, Search, Loader2 } from "lucide-react";
 import type { CallType } from "@/hooks/useGroupCall";
+import { getRoleColor } from "@/../../shared/status-colors";
 
 interface User {
   id: string;
@@ -73,19 +74,7 @@ export function ParticipantSelectorDialog({
     setRoleFilter("all");
   };
 
-  const getRoleBadgeVariant = (role: string) => {
-    switch (role) {
-      case "super_admin":
-      case "admin":
-        return "default";
-      case "seller":
-        return "secondary";
-      case "rider":
-        return "outline";
-      default:
-        return "outline";
-    }
-  };
+  // Role colors now imported from shared/status-colors.ts
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -150,10 +139,10 @@ export function ParticipantSelectorDialog({
                             data-testid={`checkbox-${user.id}`}
                           />
                           <div className="flex-1 min-w-0">
-                            <p className="font-medium truncate">{user.name}</p>
+                          <p className="font-medium truncate">{user.name}</p>
                             <p className="text-sm text-muted-foreground truncate">{user.email}</p>
                           </div>
-                          <Badge variant={getRoleBadgeVariant(user.role)} data-testid={`badge-role-${user.id}`}>
+                          <Badge className={getRoleColor(user.role, 'solid')} data-testid={`badge-role-${user.id}`}>
                             {user.role.replace('_', ' ')}
                           </Badge>
                         </div>

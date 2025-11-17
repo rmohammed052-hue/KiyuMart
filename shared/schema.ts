@@ -44,12 +44,14 @@ export const users = pgTable("users", {
   nationalIdCard: varchar("national_id_card"),
   ratings: decimal("ratings", { precision: 3, scale: 2 }).default("0"),
   totalRatings: integer("total_ratings").default(0),
+  deletedAt: timestamp("deleted_at"),
   createdAt: timestamp("created_at").defaultNow(),
 }, (table) => ({
   roleIdx: index("users_role_idx").on(table.role),
   isActiveIdx: index("users_is_active_idx").on(table.isActive),
   isApprovedIdx: index("users_is_approved_idx").on(table.isApproved),
   applicationStatusIdx: index("users_application_status_idx").on(table.applicationStatus),
+  deletedAtIdx: index("users_deleted_at_idx").on(table.deletedAt),
 }));
 
 export const adminPermissions = pgTable("admin_permissions", {
@@ -166,9 +168,12 @@ export const stores = pgTable("stores", {
   }>(),
   isPayoutVerified: boolean("is_payout_verified").default(false),
   
+  deletedAt: timestamp("deleted_at"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
-});
+}, (table) => ({
+  deletedAtIdx: index("stores_deleted_at_idx").on(table.deletedAt),
+}));
 
 // Product categories (admin-manageable)
 export const categories = pgTable("categories", {
@@ -204,6 +209,7 @@ export const products = pgTable("products", {
   isActive: boolean("is_active").default(true),
   ratings: decimal("ratings", { precision: 3, scale: 2 }).default("0"),
   totalRatings: integer("total_ratings").default(0),
+  deletedAt: timestamp("deleted_at"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 }, (table) => ({
@@ -211,6 +217,7 @@ export const products = pgTable("products", {
   storeIdx: index("products_store_id_idx").on(table.storeId),
   categoryIdIdx: index("products_category_id_idx").on(table.categoryId),
   isActiveIdx: index("products_is_active_idx").on(table.isActive),
+  deletedAtIdx: index("products_deleted_at_idx").on(table.deletedAt),
 }));
 
 export const deliveryZones = pgTable("delivery_zones", {

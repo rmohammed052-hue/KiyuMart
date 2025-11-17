@@ -48,13 +48,14 @@ export default function AgentTickets() {
   const inProgressTickets = tickets.filter(t => t.status === "in_progress");
   const resolvedTickets = tickets.filter(t => t.status === "resolved" || t.status === "closed");
 
+  // Map priority to standard status categories
   const getPriorityColor = (priority: string) => {
-    switch(priority) {
-      case "high": return "destructive";
-      case "medium": return "default";
-      case "low": return "secondary";
-      default: return "default";
-    }
+    const colorMap: Record<string, string> = {
+      high: 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800 border',
+      medium: 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800 border',
+      low: 'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/30 dark:text-sky-400 dark:border-sky-800 border',
+    };
+    return colorMap[priority] || colorMap.medium;
   };
 
   const getStatusIcon = (status: string) => {
@@ -75,7 +76,7 @@ export default function AgentTickets() {
             <CardTitle className="text-base mb-2">{ticket.subject}</CardTitle>
             <p className="text-sm text-muted-foreground line-clamp-2">{ticket.description}</p>
           </div>
-          <Badge variant={getPriorityColor(ticket.priority)} className="ml-2">
+          <Badge className={getPriorityColor(ticket.priority)}>
             {ticket.priority}
           </Badge>
         </div>

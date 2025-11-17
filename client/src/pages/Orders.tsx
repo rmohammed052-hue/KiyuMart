@@ -35,22 +35,7 @@ export default function Orders() {
     queryKey: ["/api/orders?context=buyer"],
   });
 
-  const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case "pending":
-        return "bg-yellow-500 text-white";
-      case "processing":
-        return "bg-blue-500 text-white";
-      case "shipped":
-        return "bg-purple-500 text-white";
-      case "delivered":
-        return "bg-primary text-primary-foreground";
-      case "cancelled":
-        return "bg-red-500 text-white";
-      default:
-        return "bg-gray-500 text-white";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   const getStatusIcon = (status: string) => {
     switch (status.toLowerCase()) {
@@ -93,9 +78,9 @@ export default function Orders() {
               </p>
             </div>
           </div>
-          <Badge className={getStatusColor(order.status)} data-testid={`badge-status-${order.id}`}>
+          <div className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold border ${getOrderStatusColor(order.status, 'light')}`} data-testid={`badge-status-${order.id}`}>
             {order.status}
-          </Badge>
+          </div>
         </div>
       </CardHeader>
       <CardContent>

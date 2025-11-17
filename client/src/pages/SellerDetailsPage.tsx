@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, ArrowLeft, ShoppingCart, DollarSign, TrendingUp, Calendar, CheckCircle } from "lucide-react";
+import { Loader2, ArrowLeft, Package, TrendingUp, DollarSign, Calendar } from "lucide-react";
 import { format } from "date-fns";
+import { getOrderStatusColor } from "@/../../shared/status-colors";
 
 interface Order {
   id: string;
@@ -91,33 +92,7 @@ export default function SellerDetailsPage() {
   const sales = salesData?.sales || [];
   const analytics = salesData?.analytics;
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "delivered":
-        return "bg-primary";
-      case "delivering":
-        return "bg-blue-500";
-      case "processing":
-        return "bg-yellow-500";
-      case "cancelled":
-        return "bg-red-500";
-      default:
-        return "bg-gray-500";
-    }
-  };
-
-  const getPaymentStatusColor = (status: string) => {
-    switch (status) {
-      case "completed":
-        return "bg-primary";
-      case "processing":
-        return "bg-blue-500";
-      case "failed":
-        return "bg-red-500";
-      default:
-        return "bg-gray-500";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   return (
     <DashboardLayout role={user?.role as any}>
@@ -224,10 +199,10 @@ export default function SellerDetailsPage() {
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
                             <h3 className="font-semibold">Order #{order.orderNumber}</h3>
-                            <Badge className={getStatusColor(order.status)}>
+                            <div className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold border ${getOrderStatusColor(order.status, 'light')}`}>
                               {order.status}
-                            </Badge>
-                            <Badge className={getPaymentStatusColor(order.paymentStatus)}>
+                            </div>
+                            <Badge className={order.paymentStatus === 'completed' ? 'bg-green-50 text-green-700 dark:bg-green-950/30 dark:text-green-400 border-green-200 dark:border-green-800 border' : 'bg-gray-50 text-gray-700 dark:bg-gray-900/50 dark:text-gray-400 border-gray-200 dark:border-gray-700 border'}>
                               {order.paymentStatus}
                             </Badge>
                           </div>

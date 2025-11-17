@@ -58,15 +58,16 @@ export default function AdminNotifications() {
     },
   });
 
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case "order": return "bg-blue-500";
-      case "user": return "bg-purple-500";
-      case "payment": return "bg-primary text-primary-foreground";
-      case "system": return "bg-orange-500";
-      case "alert": return "bg-red-500";
-      default: return "bg-gray-500";
-    }
+  // Map notification types to standard status categories
+  const getNotificationColor = (type: string) => {
+    const colorMap: Record<string, string> = {
+      order: 'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/30 dark:text-sky-400 dark:border-sky-800 border',
+      user: 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/30 dark:text-purple-400 dark:border-purple-800 border',
+      payment: 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800 border',
+      system: 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800 border',
+      alert: 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800 border',
+    };
+    return colorMap[type] || 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-900/50 dark:text-gray-400 dark:border-gray-700 border';
   };
 
   return (
@@ -113,7 +114,7 @@ export default function AdminNotifications() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-semibold">{notification.title}</h3>
-                      <Badge className={`${getTypeColor(notification.type)} text-white text-xs`}>
+                      <Badge className={getNotificationColor(notification.type)}>
                         {notification.type}
                       </Badge>
                       {!notification.isRead && (

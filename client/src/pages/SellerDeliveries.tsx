@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Truck, MapPin, Package } from "lucide-react";
+import { getOrderStatusColor } from "../../../shared/status-colors";
 
 interface Delivery {
   id: string;
@@ -32,16 +33,7 @@ export default function SellerDeliveries() {
     },
   });
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "pending": return "bg-yellow-500";
-      case "assigned": return "bg-blue-500";
-      case "picked_up": return "bg-purple-500";
-      case "in_transit": return "bg-orange-500";
-      case "delivered": return "bg-green-500";
-      default: return "bg-gray-500";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   return (
     <DashboardLayout role="seller">
@@ -72,9 +64,9 @@ export default function SellerDeliveries() {
                     <div className="flex items-center gap-3 mb-2">
                       <Package className="h-5 w-5 text-muted-foreground" />
                       <p className="font-semibold">Order #{delivery.orderNumber}</p>
-                      <Badge className={`${getStatusColor(delivery.status)} text-white`}>
-                        {delivery.status.replace("_", " ")}
-                      </Badge>
+                                            <div className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold border ${getOrderStatusColor(delivery.status, 'light')}`}>
+                        {delivery.status}
+                      </div>
                     </div>
                     <div className="flex items-start gap-2 text-sm text-muted-foreground">
                       <MapPin className="h-4 w-4 mt-0.5" />

@@ -13,6 +13,7 @@ import { Loader2, Search, Eye, Package, ArrowLeft } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { apiRequest, queryClient } from "@/lib/queryClient";
+import { getOrderStatusColor } from "@/../../shared/status-colors";
 
 interface Order {
   id: string;
@@ -295,16 +296,7 @@ export default function AdminOrders() {
     o.status.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const getStatusColor = (status: string) => {
-    switch(status.toLowerCase()) {
-      case "pending": return "bg-yellow-500";
-      case "processing": return "bg-blue-500";
-      case "delivering": return "bg-purple-500";
-      case "delivered": return "bg-primary text-primary-foreground";
-      case "cancelled": return "bg-red-500";
-      default: return "bg-gray-500";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   if (authLoading || !isAuthenticated || (user?.role !== "admin" && user?.role !== "super_admin")) {
     return (
@@ -365,9 +357,9 @@ export default function AdminOrders() {
                         <span className="text-primary font-bold" data-testid={`text-total-${order.id}`}>
                           {formatPrice(parseFloat(order.total))}
                         </span>
-                        <Badge className={getStatusColor(order.status)} data-testid={`badge-status-${order.id}`}>
+                        <div className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold border ${getOrderStatusColor(order.status, 'light')}`} data-testid={`badge-status-${order.id}`}>
                           {order.status}
-                        </Badge>
+                        </div>
                         <span className="text-sm text-muted-foreground" data-testid={`text-date-${order.id}`}>
                           {new Date(order.createdAt).toLocaleDateString()}
                         </span>

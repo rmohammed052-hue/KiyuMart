@@ -1,4 +1,5 @@
 import { useRoute, useLocation } from "wouter";
+import DOMPurify from "dompurify";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -108,7 +109,11 @@ export default function DynamicPage() {
               {page.content ? (
                 <div 
                   className="prose prose-slate dark:prose-invert max-w-none"
-                  dangerouslySetInnerHTML={{ __html: page.content }}
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(page.content, {
+                    ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'ul', 'ol', 'li', 'a'],
+                    ALLOWED_ATTR: ['href', 'title', 'target'],
+                    ALLOW_DATA_ATTR: false
+                  }) }}
                   data-testid="text-page-content"
                 />
               ) : (

@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, ArrowLeft, Package, DollarSign, TrendingUp, Calendar } from "lucide-react";
 import { format } from "date-fns";
+import { getOrderStatusColor } from "@/../../shared/status-colors";
 
 interface Order {
   id: string;
@@ -94,20 +95,7 @@ export default function RiderDetailsPage() {
     );
   }
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "delivered":
-        return "bg-primary text-primary-foreground";
-      case "delivering":
-        return "bg-blue-500";
-      case "processing":
-        return "bg-yellow-500";
-      case "cancelled":
-        return "bg-red-500";
-      default:
-        return "bg-gray-500";
-    }
-  };
+  // Status colors now imported from shared/status-colors.ts
 
   return (
     <DashboardLayout role={user?.role as any}>
@@ -212,9 +200,9 @@ export default function RiderDetailsPage() {
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
                             <h3 className="font-semibold">Order #{order.orderNumber}</h3>
-                            <Badge className={getStatusColor(order.status)}>
+                            <div className={`inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold ${getOrderStatusColor(order.status, 'light')}`}>
                               {order.status}
-                            </Badge>
+                            </div>
                           </div>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                             <div>
