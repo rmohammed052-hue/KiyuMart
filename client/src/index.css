@@ -71,58 +71,58 @@
     --font-serif: 'Playfair Display', 'Lora', Georgia, serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
     
-    /* Dark Mode - Pure Black/Gray, No Blue Tint */
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
+    /* Dark Mode Colors - Exact Match to Dashboard Screenshot */
+    --background: 220 13% 9%; /* #14171A - Very dark background */
+    --foreground: 0 0% 100%; /* #FFFFFF - Pure white text */
     
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
-    --card-border: 0 0% 18%;
+    --card: 218 18% 12%; /* #1A1F25 - Dark card background */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+    --card-border: 220 13% 18%; /* #252A30 - Subtle card border */
     
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
-    --popover-border: 0 0% 18%;
+    --popover: 218 18% 12%; /* #1A1F25 */
+    --popover-foreground: 0 0% 100%;
+    --popover-border: 220 13% 18%;
     
-    --primary: 16 100% 61%;
+    --primary: 158 64% 52%; /* #10B981 - Emerald green for active states */
     --primary-foreground: 0 0% 100%;
-    --primary-border: 16 100% 61%;
+    --primary-border: 158 64% 52%;
     
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-border: 0 0% 18%;
+    --secondary: 217 19% 27%; /* #38404A - Dark gray for secondary elements */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-border: 220 13% 18%;
     
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-    --muted-border: 0 0% 18%;
+    --muted: 217 19% 27%; /* #38404A - Muted backgrounds */
+    --muted-foreground: 220 9% 64%; /* #9CA3AF - Gray text */
+    --muted-border: 220 13% 18%;
     
-    --accent: 16 100% 61%;
+    --accent: 158 64% 52%; /* #10B981 - Green accent */
     --accent-foreground: 0 0% 100%;
-    --accent-border: 16 100% 61%;
+    --accent-border: 158 64% 52%;
     
-    --destructive: 0 62.8% 50%;
+    --destructive: 0 72% 51%; /* #EF4444 - Red for errors/negative */
     --destructive-foreground: 0 0% 100%;
-    --destructive-border: 0 62.8% 50%;
+    --destructive-border: 0 72% 51%;
     
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 16 100% 61%;
+    --border: 220 13% 18%; /* #252A30 - Subtle borders */
+    --input: 220 13% 18%;
+    --ring: 158 64% 52%;
     
-    --chart-1: 16 100% 61%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-1: 158 64% 52%; /* #10B981 - Green */
+    --chart-2: 45 93% 47%; /* #F59E0B - Amber */
+    --chart-3: 0 72% 51%; /* #EF4444 - Red */
+    --chart-4: 217 19% 27%; /* #38404A */
+    --chart-5: 218 18% 12%; /* #1A1F25 */
     
-    --sidebar: 0 0% 7%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 16 100% 61%;
+    --sidebar: 220 13% 9%; /* #14171A - Same as background */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 158 64% 52%; /* #10B981 - Active green */
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-primary-border: 16 100% 61%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-accent-border: 0 0% 18%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 16 100% 61%;
+    --sidebar-primary-border: 158 64% 52%;
+    --sidebar-accent: 217 19% 27%; /* #38404A */
+    --sidebar-accent-foreground: 220 9% 64%; /* #9CA3AF */
+    --sidebar-accent-border: 220 13% 18%;
+    --sidebar-border: 220 13% 18%; /* #252A30 */
+    --sidebar-ring: 158 64% 52%;
   }
 }
 
